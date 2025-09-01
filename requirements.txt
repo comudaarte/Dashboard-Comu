@@ -1,0 +1,41 @@
+# Python dependencies 
+
+# Web Framework
+dash==2.14.0
+plotly==5.18.0
+dash-bootstrap-components==1.5.0
+
+# API Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+alembic==1.12.1
+sqlalchemy==2.0.23
+
+# HTTP Clients
+aiohttp==3.9.1
+httpx==0.25.2
+
+# Task Queue
+celery==5.3.4
+redis==5.0.1
+flower==2.0.1
+
+# Utils
+python-dotenv==1.0.0
+pydantic==2.5.2
+pandas==2.1.4
+numpy==1.26.2
+
+# Monitoring
+sentry-sdk==1.39.1
+prometheus-client==0.19.0
+
+# Development
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.12.0
+flake8==6.1.0

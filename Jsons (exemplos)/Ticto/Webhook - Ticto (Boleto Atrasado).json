@@ -1,0 +1,112 @@
+{
+  "status_date": "2025-07-01 02:00:27",
+  "checkout_url": "https://checkout.ticto.app/OD84531E6",
+  "item": {
+    "amount": 3990,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OD84531E6",
+    "product_name": "Comunidade da Arte - Mensal",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Mensal",
+    "offer_id": 62780,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41145,
+    "members_portal_id": null,
+    "days_of_access": 30
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2025-07-19 00:00:00",
+      "canceled_at": null,
+      "change_card_url": "https://dash.ticto.com.br/change-card/373666?orderCode=TOB11903U7990UO&email=estela.mclsilva@gmail.com",
+      "successful_charges": 4,
+      "interval": 1,
+      "id": 373666
+    }
+  ],
+  "telefone": "41988958828",
+  "coproducers": [],
+  "phone_number_customer": "41988958828",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "event": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 260,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 3481,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "COMUNIDADE DA ARTE LTDA",
+    "cms": "34.81",
+    "pid": "",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "bank_slip",
+  "transaction": {
+    "bank_slip_url": "https://checkout.ticto.app/bankslip/TOB11903U7990UO",
+    "bank_slip_code": "03399543492032230643064231001013911240000003990",
+    "hash": "TPB182731906KTY29UAW",
+    "bank_slip_pdf": "https://live.adyen.com/hpp/generationBoleto.shtml?data=BQABAQAc5VmqCxBg2WJ2%2BIks2JkiXwSx1e0neAaiBTL6VAVsHZMnMko%2Bwn03ccth%2FdC2slJDs2jOuy3%2FCPuyAk1cEVdEFXptmTf%2F6taJnNXy8LY0rlczrZzI5rBlTlc7MXRVxJ6MOSPPEDB%2FFamGAYv%2FEl4LlXG%2BTXjz%2B4pG672k0d0MNC3dh4zTzB7GPkWmH8N9R7%2Bgznfs3FH0Ik1Hk5YC2PO9wZOnNQ0AxSPuhoZTnfD170hNawLRHI2i3KX1f7vkPXCqQmG6zZaWd1fJlWfMGDpsd06uTtK%2BbCR3J%2BlO4kMTj815sC0CYAXKvBY6QHGkrbjDQndPPpxF1f75SQhwHMNMDK1ASKI7vgEhrOsTewAAv9Bqx%2B9qyVHVvMU9oh%2FpJq16JyEYpz%2BlxHCHEAI3dqN1CISmN7ZLUQU26VEc1nK0%2F5xsLWn475QMDqBqNK4UU%2FSnAnG6HFzLYeUexDZzARwoPEZZgqmn2Qob1bIHI3jhEXdOQZ7J9t2W9tbOr040xcLDTEWh0pMKnUFfizPw38M1W%2FhEe5GNnyEg3O8kJiSxGatVZjy6QDPFoZYX9OO2cz%2Bfv5EjAruuY3eNOFpXZzI9G%2BSlkxCzmBE5vbhurLoAySnoQoyTliCcaQ04t99ElqGusFdCDLCXGcl4iq7GlHKy8bxoPTs%2BYmQGY4KPLxVrYxig17FNnInrRmqBKzA4KHbiSIQOhWQ%3D"
+  },
+  "status": "bank_slip_delayed",
+  "order": {
+    "paid_amount": 3990,
+    "order_date": "2025-03-19 00:25:38",
+    "id": 2354925,
+    "installments": 1,
+    "hash": "TOB11903U7990UO",
+    "transaction_hash": "TPB182731906KTY29UAW"
+  },
+  "customer": {
+    "country": {
+      "flag": {
+        "src": "countries_flags/br.svg"
+      },
+      "dial_code": "+55",
+      "languages": ["Portuguese"],
+      "name": "Brazil",
+      "currency": "BRL",
+      "region": "Americas",
+      "iso_code": "BR"
+    },
+    "code": "U19A729C2",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "41",
+      "number": "988958828"
+    },
+    "is_foreign": false,
+    "cpf": "08128454986",
+    "name": "Estela Luiza Moreira Carlos Lopes da Silva",
+    "language": "pt-BR",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "estela.mclsilva@gmail.com",
+    "email": "estela.mclsilva@gmail.com"
+  }
+}

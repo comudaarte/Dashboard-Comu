@@ -1,0 +1,313 @@
+{
+  "attempts": 1,
+  "connection": "pubsub",
+  "payload": {
+    "affiliations": null,
+    "api_token": "9PT0ScPlMQ5t3bzWkdzPObuvpfMiHSGbEVxXJdxP",
+    "cancel_at_cycle_end": 0,
+    "cancel_reason": "Não quer a renovação.",
+    "cancelled_by": {
+      "date": "2025-06-18T19:54:37Z",
+      "email": "suporte@comudaarte.com",
+      "name": "Suporte (Sara)"
+    },
+    "charged_every_days": 365,
+    "charged_times": 1,
+    "contracts": [],
+    "credit_card": {
+      "bin": "230650",
+      "brand": "mastercard",
+      "created_at": "2025-06-15T12:54:28Z",
+      "expiration_month": "12",
+      "expiration_year": "2031",
+      "holder_name": "Isabela V Oliveira",
+      "id": "3d45c615-912e-4b2a-a57c-2aec0e0913e5",
+      "last_four": "0049",
+      "marketplace": {
+        "pagarme2": {
+          "customer": {
+            "id": "cus_dm3rDZniJi3DZoA0"
+          },
+          "payment": {
+            "id": "card_39DJa31tNMiVAGOk"
+          }
+        }
+      },
+      "renewed": 0,
+      "updated_at": "2025-06-15T12:54:28Z"
+    },
+    "current_invoice": {
+      "charge_at": "2025-06-15",
+      "code": "in_TlydC1v409NFsPOGB",
+      "created_at": 1749992068,
+      "cycle": 1,
+      "discount_value": 0,
+      "id": "9f292d8f-3ff5-4f74-855b-4775b86f49d8",
+      "increment_value": 0,
+      "payment_url": "https://go.comudaarte.com/pay/9f292d8f-3ff5-4f74-855b-4775b86f49d8/invoice",
+      "period_end": "2026-06-15",
+      "period_start": "2025-06-15",
+      "status": "paid",
+      "subscription_id": "9f292d8f-3dcd-4ca1-bae6-de7f33269d1a",
+      "tax_value": 0,
+      "type": "cycle",
+      "updated_at": 1749992322,
+      "value": 358.8
+    },
+    "dates": {
+      "canceled_at": "2025-06-18T19:54:37Z",
+      "cycle_end_date": "2025-06-18",
+      "cycle_start_date": "2025-06-15",
+      "last_status_at": "2025-06-18T19:54:37Z",
+      "next_cycle_at": "2026-06-16",
+      "started_at": "2025-06-15T12:54:28Z"
+    },
+    "id": "sub_CKbiQnjYRGL6l5bK",
+    "internal_id": "9f292d8f-3dcd-4ca1-bae6-de7f33269d1a",
+    "last_status": "canceled",
+    "last_transaction": {
+      "affiliations": [],
+      "checkout_url": "https://go.comudaarte.com/subscribe/comu-anual",
+      "contact": {
+        "address": "",
+        "address_city": "",
+        "address_comp": "",
+        "address_country": "BR",
+        "address_district": "",
+        "address_number": "",
+        "address_state": "",
+        "address_state_full_name": "",
+        "address_zip_code": "",
+        "company_name": "",
+        "doc": "00604695101",
+        "email": "dartveiga22@gmail.com",
+        "id": "9f292ccc-4477-4a30-b999-38a1eba2b6b1",
+        "lead": [],
+        "name": "Isabela Veiga Oliveira",
+        "phone_local_code": "55",
+        "phone_number": "62981886368"
+      },
+      "dates": {
+        "canceled_at": null,
+        "confirmed_at": "2025-06-15T12:54:26Z",
+        "created_at": "2025-06-15T12:52:20Z",
+        "expires_at": null,
+        "ordered_at": "2025-06-15T12:51:32Z",
+        "unavailable_until": "2025-07-15T12:54:26Z",
+        "updated_at": "2025-06-15T12:55:03Z",
+        "warranty_until": "2025-07-15T12:54:26Z"
+      },
+      "ecommerces": [],
+      "extras": {
+        "accepted_privacy_policy_url": 0,
+        "accepted_terms_url": 0
+      },
+      "id": "9f292c82-426f-402a-9761-d9e4982b8c7d",
+      "infrastructure": {
+        "city": "goiania",
+        "city_lat_long": "-16.686849,-49.270790",
+        "country": "BR",
+        "facebook_browser_id": "fb.1.1749991847473.8589133734",
+        "ga_id": "GA1.1.1354284367.1749991851",
+        "host": "go.comudaarte.com",
+        "ip": "191.25.233.77",
+        "region": "go",
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; 23106RN0DA Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.80 Mobile Safari/537.36 Instagram 384.0.0.46.83 Android (35/15; 320dpi; 720x1600; Xiaomi/Redmi; 23106RN0DA; gale; mt6768; pt_BR; 746325016; IABMV/1)"
+      },
+      "invoice": {
+        "charge_at": "2025-06-15",
+        "created_at": "2025-06-15T12:54:28Z",
+        "cycle": 1,
+        "discount_value": 0,
+        "id": "in_TlydC1v409NFsPOGB",
+        "increment_value": 0,
+        "period_end": "2026-06-15",
+        "period_start": "2025-06-15",
+        "status": "paid",
+        "tax_value": 0,
+        "tries": 0,
+        "try": 0,
+        "type": "cycle",
+        "value": 358.8
+      },
+      "payment": {
+        "acquirer": {
+          "code": "0000",
+          "message": "Transação aprovada com sucesso",
+          "name": "pagarme",
+          "nsu": "3992727124",
+          "tid": "3992727124"
+        },
+        "affiliate_value": 0,
+        "can_try_again": 1,
+        "coupon": null,
+        "credit_card": {
+          "brand": "mastercard",
+          "expiration_month": "12",
+          "expiration_year": "2031",
+          "first_digits": "230650",
+          "id": "card_39DJa31tNMiVAGOk",
+          "last_digits": "0049"
+        },
+        "currency": "BRL",
+        "discount_value": 0,
+        "gross": 358.8,
+        "installments": {
+          "interest": 0,
+          "qty": 12,
+          "value": 29.9
+        },
+        "marketplace_id": "ch_nO4AWrOU9U7yq1Z9",
+        "marketplace_name": "pagarme2",
+        "marketplace_value": 10.26,
+        "method": "credit_card",
+        "net": 348.54,
+        "processing_times": {
+          "delay_in_seconds": 2,
+          "finished_at": "2025-06-15T12:54:26.486Z",
+          "started_at": "2025-06-15T12:54:24.379Z"
+        },
+        "refund_reason": "",
+        "refuse_reason": "Transação aprovada com sucesso (0000)",
+        "tax": {
+          "rate": 0,
+          "value": 0
+        },
+        "total": 358.8
+      },
+      "product": {
+        "id": "1741887379",
+        "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/offers/9f23b5ee-620e-470d-be9b-766c70fe4dba.png",
+        "internal_id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+        "marketplace_id": "1741887379",
+        "marketplace_name": "pagarme2",
+        "name": "Comu Academy",
+        "offer": {
+          "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+          "name": "Comunidade da Arte - Anual (S/Juros)"
+        },
+        "producer": {
+          "contact_email": "",
+          "marketplace_id": "1741781464",
+          "name": "Comunidade Da Arte"
+        },
+        "qty": 1,
+        "total_value": 358.8,
+        "type": "plan",
+        "unit_value": 358.8
+      },
+      "shipment": {
+        "carrier": "",
+        "delivery_time": "",
+        "service": "",
+        "status": "",
+        "tracking": "",
+        "value": 0
+      },
+      "shipping": {
+        "name": "Standard",
+        "value": 0
+      },
+      "source": {
+        "checkout_source": "7a96e11b-4965-4e7f-ada3-525b2bc5e42b",
+        "pptc": [],
+        "source": "funil06",
+        "utm_campaign": "120227248988170296",
+        "utm_content": "120227249447530296",
+        "utm_medium": "paid",
+        "utm_source": "ig",
+        "utm_term": "120227248988200296"
+      },
+      "status": "approved",
+      "type": "producer"
+    },
+    "name": "Comu Academy",
+    "next_cycle_installments": 12,
+    "next_cycle_value": 358.8,
+    "next_product": {
+      "id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+      "marketplace_id": "1741887379",
+      "marketplace_name": "pagarme2",
+      "name": "Comu Academy",
+      "offer": {
+        "cash_discount": 0,
+        "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+        "name": "Comunidade da Arte - Anual (S/Juros)",
+        "plan": {
+          "cycles": 0,
+          "discount": {
+            "cycles": 0,
+            "value": 0
+          },
+          "increment": {
+            "cycles": 0,
+            "value": 0
+          },
+          "interval": 1,
+          "interval_type": "year",
+          "provider": "guru",
+          "split_cycles": 0,
+          "trial_days": 0
+        },
+        "units_per_sale": 1,
+        "value": 358.8
+      }
+    },
+    "payment_method": "credit_card",
+    "product": {
+      "id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+      "marketplace_id": "1741887379",
+      "marketplace_name": "pagarme2",
+      "name": "Comu Academy",
+      "offer": {
+        "cash_discount": 0,
+        "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+        "name": "Comunidade da Arte - Anual (S/Juros)",
+        "plan": {
+          "cycles": 0,
+          "discount": {
+            "cycles": 0,
+            "value": 0
+          },
+          "increment": {
+            "cycles": 0,
+            "value": 0
+          },
+          "interval": 1,
+          "interval_type": "year",
+          "provider": "guru",
+          "split_cycles": 0,
+          "trial_days": 0
+        },
+        "units_per_sale": 1,
+        "value": 358.8
+      }
+    },
+    "provider": "guru",
+    "subscriber": {
+      "address": "",
+      "address_city": "",
+      "address_comp": "",
+      "address_country": "BR",
+      "address_district": "",
+      "address_number": "",
+      "address_state": "",
+      "address_zip_code": "",
+      "doc": "00604695101",
+      "email": "dartveiga22@gmail.com",
+      "id": "9f292ccc-4477-4a30-b999-38a1eba2b6b1",
+      "name": "Isabela Veiga Oliveira",
+      "phone_local_code": "55",
+      "phone_number": "62981886368"
+    },
+    "subscription_code": "sub_CKbiQnjYRGL6l5bK",
+    "trial_days": 0,
+    "trial_finished_at": null,
+    "trial_started_at": null,
+    "webhook_type": "subscription"
+  },
+  "queue": "webhooks",
+  "request_id": "9f2fccd9-7622-4a14-89c5-d2b5b0961dfd",
+  "return": "{\"id\":144282438,\"name\":\"Isabela Veiga Oliveira\",\"phone\":\"+5562981886368\",\"tags\":[\"aguardando-pagamento\",\"aguardando-pagamento-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb\",\"aguardando-pagamento-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb-oferta-9e942d92-da6b-40b2-ba26-d58829850a5d\",\"aguardando-pagamento-cartao-credito\",\"aguardando-pagamento-cartao-credito-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb\",\"aguardando-pagamento-cartao-credito-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb-oferta-9e942d92-da6b-40b2-ba26-d58829850a5d\",\"assinatura-ativa\",\"assinatura-gratuita\",\"ativo-whatsapp\",\"compra-realizada\",\"compra-realizada-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb\",\"compra-realizada-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb-oferta-9e942d92-da6b-40b2-ba26-d58829850a5d\",\"compra-realizada-cartao-credito\",\"compra-realizada-cartao-credito-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb\",\"compra-realizada-cartao-credito-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb-oferta-9e942d92-da6b-40b2-ba26-d58829850a5d\",\"custom\",\"digital-guru\",\"email\",\"guru-anual\",\"iniciou-pagamento-cartao\",\"produto-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb\",\"produto-9e6c7a03-acdf-45af-abc5-0e0ba41d54eb-oferta-9e942d92-da6b-40b2-ba26-d58829850a5d\",\"telefone\",\"webhook-88598\",\"webhook-89657\"],\"project_id\":22930,\"created_at\":\"2025-06-15T12:56:27.071Z\",\"updated_at\":\"2025-06-18T19:55:18.212Z\",\"status\":1,\"email\":\"dartveiga22@gmail.com\",\"preferential_whats_id\":4787455,\"code\":\"oYOrFgd\",\"unsub_sms\":false,\"unsub_whats\":false,\"unsub_call\":false,\"keys_channel\":null}",
+  "url": "https://webhook.sellflux.app/webhook/digital_guru/lead/6dbcb03896cfbf3601fa31c53d1a9068"
+}

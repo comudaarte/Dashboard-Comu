@@ -1,0 +1,182 @@
+{
+  "attempts": 1,
+  "connection": "pubsub",
+  "payload": {
+    "affiliations": [],
+    "api_token": "9PT0ScPlMQ5t3bzWkdzPObuvpfMiHSGbEVxXJdxP",
+    "checkout_url": "https://go.comudaarte.com/subscribe/comu-anual",
+    "contact": {
+      "address": "",
+      "address_city": "",
+      "address_comp": "",
+      "address_country": "BR",
+      "address_district": "",
+      "address_number": "",
+      "address_state": "",
+      "address_state_full_name": "",
+      "address_zip_code": "",
+      "company_name": "",
+      "doc": "10311469973",
+      "email": "arthuur.caastro@gmail.com",
+      "id": "9f4b9da8-a066-44ed-901c-2caede99b1ad",
+      "lead": [],
+      "name": "Arthur Rezende De Castro Neto",
+      "phone_local_code": "55",
+      "phone_number": "47992768485"
+    },
+    "contracts": [],
+    "dates": {
+      "canceled_at": "2025-07-02T15:47:02Z",
+      "confirmed_at": null,
+      "created_at": "2025-07-02T15:47:05Z",
+      "expires_at": null,
+      "ordered_at": "2025-07-02T15:47:02Z",
+      "unavailable_until": null,
+      "updated_at": "2025-07-02T15:47:05Z",
+      "warranty_until": null
+    },
+    "ecommerces": [],
+    "extras": {
+      "accepted_privacy_policy_url": 0,
+      "accepted_terms_url": 0
+    },
+    "id": "9f4b9e00-fbe0-4e8e-a7cc-f3a23e157503",
+    "infrastructure": {
+      "city": "londrina",
+      "city_lat_long": "-23.319730,-51.166201",
+      "country": "BR",
+      "facebook_browser_id": "fb.1.1751468397998.6835445173",
+      "ga_id": "GA1.1.568099778.1751468401",
+      "host": "go.comudaarte.com",
+      "ip": "187.18.115.129",
+      "region": "pr",
+      "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
+    },
+    "invoice": [],
+    "is_order_bump": 1,
+    "is_reissue": 0,
+    "items": [
+      {
+        "id": "1742214167",
+        "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/products/9e741829-95a2-438d-8caf-72a0a3c5fb4d.png",
+        "internal_id": "9e7415ca-e38d-4f59-96fd-dacc12a1b312",
+        "marketplace_id": "1742214167",
+        "marketplace_name": "pagarme2",
+        "name": "Ebook - Como Criar Personagens",
+        "offer": {
+          "id": "9e74189c-37b8-4cf5-9372-49168b8dcf90",
+          "name": "Ebook - Como Criar Personagens"
+        },
+        "producer": {
+          "contact_email": null,
+          "marketplace_id": "1741781464",
+          "name": "Comunidade Da Arte"
+        },
+        "qty": 1,
+        "total_value": 17.9,
+        "type": "product",
+        "unit_value": 17.9
+      }
+    ],
+    "last_transaction": {
+      "id": "9f4b9cdd-cfcf-4544-9504-baba9190d23a",
+      "url": "https://digitalmanager.guru/admin/transactions/pagarme2/ch_1W4nx6Xmi2irV5ME"
+    },
+    "payment": {
+      "acquirer": {
+        "code": "",
+        "message": "",
+        "name": "",
+        "nsu": "",
+        "tid": ""
+      },
+      "affiliate_value": 0,
+      "can_try_again": 1,
+      "coupon": null,
+      "credit_card": {
+        "brand": "mastercard",
+        "expiration_month": "12",
+        "expiration_year": "2030",
+        "first_digits": "230650",
+        "id": "card_J7boKwQAiWUeYvQM",
+        "last_digits": "4917"
+      },
+      "currency": "BRL",
+      "discount_value": 0,
+      "gross": 17.9,
+      "installments": {
+        "interest": 0,
+        "qty": 1,
+        "value": 17.9
+      },
+      "marketplace_id": "tr_oDU4UYoC9oR259bVh",
+      "marketplace_name": "pagarme2",
+      "marketplace_value": 0,
+      "method": "credit_card",
+      "net": 17.9,
+      "processing_times": {
+        "delay_in_seconds": 0,
+        "finished_at": "2025-07-02T15:47:02.646Z",
+        "started_at": "2025-07-02T15:47:02.326Z"
+      },
+      "refund_reason": "",
+      "refuse_reason": "[PagarMe2] Problemas com o endereço do comprador.",
+      "tax": {
+        "rate": 0,
+        "value": 0
+      },
+      "total": 17.9
+    },
+    "product": {
+      "id": "1742214167",
+      "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/products/9e741829-95a2-438d-8caf-72a0a3c5fb4d.png",
+      "internal_id": "9e7415ca-e38d-4f59-96fd-dacc12a1b312",
+      "marketplace_id": "1742214167",
+      "marketplace_name": "pagarme2",
+      "name": "Ebook - Como Criar Personagens",
+      "offer": {
+        "id": "9e74189c-37b8-4cf5-9372-49168b8dcf90",
+        "name": "Ebook - Como Criar Personagens"
+      },
+      "producer": {
+        "contact_email": "",
+        "marketplace_id": "1741781464",
+        "name": "Comunidade Da Arte"
+      },
+      "qty": 1,
+      "total_value": 17.9,
+      "type": "product",
+      "unit_value": 17.9
+    },
+    "shipment": {
+      "carrier": "",
+      "delivery_time": "",
+      "service": "",
+      "status": "",
+      "tracking": "",
+      "value": 0
+    },
+    "shipping": {
+      "name": "Standard",
+      "value": 0
+    },
+    "source": {
+      "checkout_source": "233a7272-56b4-4de5-b402-132e9e953c74",
+      "pptc": [],
+      "source": "funil06",
+      "utm_campaign": null,
+      "utm_content": null,
+      "utm_medium": null,
+      "utm_source": null,
+      "utm_term": null
+    },
+    "status": "canceled",
+    "subscription": [],
+    "type": "producer",
+    "webhook_type": "transaction"
+  },
+  "queue": "webhooks",
+  "request_id": "9f4b9e16-2699-4ac7-985b-20ae7b4fd3aa",
+  "return": "",
+  "url": "https://integrations.appmembros.com/webhooks/guru?api_key=62bd581d0308c5885a8f25c9fe0694efd19e39d8"
+}

@@ -1,0 +1,124 @@
+{
+  "status_date": "2024-09-28 18:16:36",
+  "checkout_url": "https://checkout.ticto.app/OC8393524",
+  "item": {
+    "amount": 35880,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OC8393524",
+    "product_name": "Comunidade da Arte - Anual",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Anual",
+    "offer_id": 55946,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41146,
+    "members_portal_id": null,
+    "days_of_access": 365
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": null,
+      "canceled_at": "2024-09-28 18:16:36",
+      "successful_charges": 0,
+      "interval": 12,
+      "id": 226249
+    }
+  ],
+  "telefone": "83988007711",
+  "coproducers": [],
+  "phone_number_customer": "83988007711",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 2095,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": {
+    "code": "OC8393524",
+    "product_id": "41146",
+    "currency": "BRL",
+    "offer_code": "OC8393524",
+    "event": "PageView",
+    "slug": "home",
+    "payment_method": "credit_card"
+  },
+  "producer": {
+    "amount": 26287,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "Comunidade da Arte",
+    "cms": "262.87",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC12841A28098NW46QNH",
+    "cards": [
+      {
+        "first_digits": "550209",
+        "holder": "Bruno G R F Galdino",
+        "brand": "master",
+        "last_digits": "8251"
+      }
+    ]
+  },
+  "status": "refused",
+  "order": {
+    "paid_amount": 37670,
+    "order_date": "2024-09-28 18:16:33",
+    "id": 1527000,
+    "installments": 12,
+    "hash": "TOCECC6122809LWK94AI",
+    "transaction_hash": "TPC12841A28098NW46QNH"
+  },
+  "customer": {
+    "country": {
+      "flag": {
+        "src": "countries_flags/br.svg"
+      },
+      "dial_code": "+55",
+      "languages": [
+        "Portuguese"
+      ],
+      "name": "Brazil",
+      "currency": "BRL",
+      "region": "Americas",
+      "iso_code": "BR"
+    },
+    "code": "UC18985C8",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "83",
+      "number": "988007711"
+    },
+    "is_foreign": false,
+    "cpf": "04365077309",
+    "name": "Bruno Giovanni Rodrigues Filgueira Galdino",
+    "language": "pt-BR",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "bruno.cadeira.luz@gmail.com",
+    "email": "bruno.cadeira.luz@gmail.com"
+  }
+}

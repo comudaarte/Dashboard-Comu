@@ -1,0 +1,134 @@
+{
+  "data": [
+    {
+      "id": 7688048,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 3019521,
+      "affiliates": [],
+      "transaction": {
+        "id": 4526620,
+        "hash": "TPC12A2642507LXE53GYP",
+        "status": "authorized",
+        "return_code": "authorized",
+        "refused_reason": "gateway.autorizou.authorized",
+        "refused_label": null,
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************1532"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 1,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "25/07/2025 17:30:13",
+        "updated_at": "25/07/2025 17:30:15"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "40745513816",
+        "cnpj": null,
+        "name": "Mariana Monteiro",
+        "type": "person",
+        "email": "mah.monteiro@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "977970395"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 3019521,
+        "hash": "TOC95B11225077TY41YT",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3825166,
+        "amount": 35880,
+        "status": "authorized",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 465252,
+      "is_smart_installment": 0,
+      "approved_date": "25/07/2025 17:30:15",
+      "created_at": "25/07/2025 17:30:13",
+      "updated_at": "25/07/2025 17:30:15"
+    }
+  ],
+  "links": {
+    "first": "https://glados.ticto.cloud/api/v1/orders/history?page=1",
+    "last": "https://glados.ticto.cloud/api/v1/orders/history?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Anterior",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Próximo &raquo;",
+        "active": false
+      }
+    ],
+    "path": "https://glados.ticto.cloud/api/v1/orders/history",
+    "per_page": 30,
+    "to": 1,
+    "total": 1
+  }
+}

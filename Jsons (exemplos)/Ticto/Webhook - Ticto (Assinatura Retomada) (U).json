@@ -1,0 +1,105 @@
+{
+  "status_date": "2025-02-08 05:00:54",
+  "checkout_url": "https://checkout.ticto.app/O84ABA07F",
+  "item": {
+    "amount": 3990,
+    "quantity": 1,
+    "members_classroom_id": 11446,
+    "refund_deadline": 7,
+    "offer_code": "O84ABA07F",
+    "product_name": "Comunidade da Arte",
+    "trial_days": 0,
+    "offer_name": "Assinatura Mensal",
+    "offer_id": 32038,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 23292,
+    "members_portal_id": 6004,
+    "days_of_access": 30
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 2,
+      "max_charges": null,
+      "next_charge": "2025-02-14 00:00:00",
+      "canceled_at": null,
+      "change_card_url": "https://dash.ticto.com.br/change-card/112448?orderCode=TOCA07F11401UXF43DG&email=pierresanarts@yahoo.com",
+      "successful_charges": 12,
+      "interval": 1,
+      "id": 112448
+    }
+  ],
+  "telefone": "11975031939",
+  "coproducers": [],
+  "phone_number_customer": "11975031939",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 260,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 3481,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "COMUNIDADE DA ARTE",
+    "cms": "34.81",
+    "pid": "",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC1B3AA0802JAP33YE4",
+    "cards": [
+      {
+        "first_digits": "550209",
+        "holder": "ivanilson a souza",
+        "brand": "mastercard",
+        "last_digits": "2195"
+      }
+    ]
+  },
+  "status": "uncanceled",
+  "order": {
+    "paid_amount": 3990,
+    "order_date": "2024-01-14 21:05:00",
+    "id": 717420,
+    "installments": 1,
+    "hash": "TOCA07F11401UXF43DG",
+    "transaction_hash": "TPC1B3AA0802JAP33YE4"
+  },
+  "customer": {
+    "code": "U2520637B",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "11",
+      "number": "975031939"
+    },
+    "is_foreign": false,
+    "cpf": "36616046869",
+    "name": "ivanilson almeida de souza",
+    "language": null,
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "pierresanarts@yahoo.com",
+    "email": "pierresanarts@yahoo.com"
+  }
+}

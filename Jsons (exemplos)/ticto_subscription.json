@@ -1,0 +1,101 @@
+{
+      "id": 465252,
+      "price": 35880,
+      "affiliates": [],
+      "first_charge_price": 35880,
+      "currency": "BRL",
+      "interval": 12,
+      "next_charge": "2026-07-25T03:00:00.000000Z",
+      "situation": "Ativa",
+      "best_day_to_charge": 25,
+      "free_days": 0,
+      "max_charges": null,
+      "successful_charges": 1,
+      "failed_charges": 0,
+      "is_smart_installment": 0,
+      "cancellation_requested_at": null,
+      "canceled_at": null,
+      "canceled_by": null,
+      "payment_method": "credit_card",
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "order": {
+        "id": 3019521,
+        "hash": "TOC95B11225077TY41YT",
+        "created_at": "25/07/2025 17:30:10"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_owner": true
+      },
+      "customer": {
+        "id": 2699831,
+        "name": "Mariana Monteiro",
+        "email": "mah.monteiro@gmail.com",
+        "cpf": "40745513816",
+        "cnpj": null,
+        "phones": [
+          {
+            "ddd": "11",
+            "ddi": "+55",
+            "number": "977970395"
+          }
+        ],
+        "zipcode": "",
+        "street": "",
+        "street_number": "",
+        "neighborhood": "",
+        "complement": "",
+        "city": "",
+        "state": "",
+        "country": ""
+      },
+      "transactions": [
+        {
+          "id": 4526620,
+          "hash": "TPC12A2642507LXE53GYP",
+          "status": "authorized",
+          "return_code": "authorized",
+          "refused_reason": "gateway.autorizou.authorized",
+          "refused_label": null,
+          "payment_method": "credit_card",
+          "paid_amount": 35880,
+          "freight_value": null,
+          "card": {
+            "brand": "master",
+            "number": "************1532"
+          },
+          "is_card2": 0,
+          "invoice_sent": 0,
+          "occurrence": 1,
+          "is_latest_transaction": true,
+          "is_free": false,
+          "created_at": "25/07/2025 17:30:13",
+          "updated_at": "25/07/2025 17:30:15"
+        }
+      ],
+      "histories": [
+        {
+          "id": 2874810,
+          "subscription_id": 465252,
+          "type": null,
+          "status": "payment_approved",
+          "reference_date": "Julho 2025",
+          "created_at": "25/07/2025 17:30:15"
+        },
+        {
+          "id": 2874809,
+          "subscription_id": 465252,
+          "type": null,
+          "status": "payment_pending",
+          "reference_date": "Julho 2025",
+          "created_at": "25/07/2025 17:30:13"
+        }
+      ],
+      "created_at": "25/07/2025 17:30:13",
+      "updated_at": "25/07/2025 17:30:15"
+    },

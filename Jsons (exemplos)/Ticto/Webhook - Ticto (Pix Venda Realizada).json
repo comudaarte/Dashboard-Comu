@@ -1,0 +1,107 @@
+{
+  "status_date": "2024-02-24 20:01:48",
+  "checkout_url": "https://checkout.ticto.app/O84ABA07F",
+  "item": {
+    "amount": 3990,
+    "quantity": 1,
+    "members_classroom_id": 11446,
+    "refund_deadline": 7,
+    "offer_code": "O84ABA07F",
+    "product_name": "Comunidade da Arte",
+    "trial_days": 0,
+    "offer_name": "Assinatura Mensal",
+    "offer_id": 32038,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 23292,
+    "members_portal_id": 6004,
+    "days_of_access": 30
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2024-02-23 00:00:00",
+      "canceled_at": null,
+      "successful_charges": 3,
+      "interval": 1,
+      "id": 100836
+    }
+  ],
+  "telefone": "13981902563",
+  "coproducers": [],
+  "phone_number_customer": "13981902563",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 279,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "type": null,
+    "method": null,
+    "amount": 0
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 3462,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "Comunidade da Arte",
+    "cms": "34.62",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "customer_code": 1,
+  "commission_type": "producer",
+  "payment_method": "pix",
+  "transaction": {
+    "pix_qr_code": "00020126580014br.gov.bcb.pix013611b4fcd8-23d4-4561-9445-3c806d777f3b520400005303986540539.905802BR5908GPS698176009Sao Paulo62240520mpqrinter72739828679630420C1",
+    "pix_url": "https://checkout.ticto.app/thanks/TOP221171V760T",
+    "hash": "TPPCE5C230246I80CP3"
+  },
+  "status": "authorized",
+  "order": {
+    "paid_amount": 3990,
+    "order_date": "2023-11-22 21:31:01",
+    "id": 590759,
+    "installments": 1,
+    "hash": "TOP221171V760T",
+    "transaction_hash": "TPPCE5C230246I80CP3"
+  },
+  "customer": {
+    "address": {
+      "reference": null,
+      "country": "Brasil",
+      "city": "São Paulo",
+      "street": "Avenida Brigadeiro Faria Lima",
+      "is_mock": 1,
+      "street_number": "1811",
+      "state": "SP",
+      "neighborhood": "Jardim Paulistano",
+      "complement": null,
+      "zip_code": "01451001"
+    },
+    "phone": {
+      "ddi": "+55",
+      "ddd": "13",
+      "number": "981902563"
+    },
+    "is_foreign": false,
+    "cpf": "24917349826",
+    "name": "Marcelo Fusetti",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "marcelofusetti@hotmail.com",
+    "email": "marcelofusetti@hotmail.com"
+  }
+}

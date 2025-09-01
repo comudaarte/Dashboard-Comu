@@ -1,0 +1,117 @@
+{
+  "status_date": "2024-06-23 19:34:13",
+  "checkout_url": "https://checkout.ticto.app/OC8393524",
+  "item": {
+    "amount": 35880,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OC8393524",
+    "product_name": "Comunidade da Arte - Anual",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Anual",
+    "offer_id": 55946,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41146,
+    "members_portal_id": null,
+    "days_of_access": 365
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2025-06-23 00:00:00",
+      "canceled_at": null,
+      "successful_charges": 1,
+      "interval": 12,
+      "id": 172287
+    }
+  ],
+  "telefone": "51997183636",
+  "coproducers": [],
+  "bumps": [
+    {
+      "product_support_email": "suporte@comudaarte.com",
+      "refund_deadline": 7,
+      "product_id": 28836,
+      "product_support_phone": "33998136170",
+      "offer_code": "O0AB56C79",
+      "product_name": "Como Criar Personagens?",
+      "offer_id": 39843,
+      "offer_name": "CCP - Acesso Vitalício",
+      "offer_price": "17.90"
+    }
+  ],
+  "phone_number_customer": "51997183636",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 2095,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5AM4u7zvgNbwuIc",
+  "shipping": {
+    "type": null,
+    "method": null,
+    "amount": 0
+  },
+  "query_params": {
+    "event": "InitiateCheckout",
+    "code": "OC8393524"
+  },
+  "producer": {
+    "amount": 26287,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "Comunidade da Arte",
+    "cms": "262.87",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC12414F2306ESW0VIB",
+    "cards": [
+      {
+        "first_digits": "485464",
+        "holder": "LAURA G AGUIAR",
+        "brand": "visa",
+        "last_digits": "1740"
+      }
+    ]
+  },
+  "status": "authorized",
+  "order": {
+    "paid_amount": 37670,
+    "order_date": "2024-06-23 19:34:11",
+    "id": 1150573,
+    "installments": 12,
+    "hash": "TOC91E9122306V0G18SN",
+    "transaction_hash": "TPC12414F2306ESW0VIB"
+  },
+  "customer": {
+    "code": "U9204790C",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "51",
+      "number": "997183636"
+    },
+    "is_foreign": false,
+    "cpf": "60284866040",
+    "name": "Laura Gutierres de Aguiar",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "laura.gutierresag@gmail.com",
+    "email": "laura.gutierresag@gmail.com"
+  }
+}

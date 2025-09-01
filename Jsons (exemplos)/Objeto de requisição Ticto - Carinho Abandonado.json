@@ -1,0 +1,12 @@
+{
+  "status": "abandoned_cart",
+  "product_name": "PRODUTO EBOOK",
+  "product_id": 252,
+  "offer_id": 183,
+  "name": "Leonardo",
+  "email": "leonardo@ticto.com.br",
+  "document": "123456789",
+  "phone": "+55 (11) 99999-9999",
+  "created_at": "20/05/2024 13:37:34",
+  "checkout_url": "https://checkout.ticto.com.br/OF6D0764F"
+}

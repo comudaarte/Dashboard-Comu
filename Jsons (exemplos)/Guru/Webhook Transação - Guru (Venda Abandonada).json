@@ -1,0 +1,172 @@
+{
+  "attempts": 1,
+  "connection": "pubsub",
+  "payload": {
+    "affiliations": [],
+    "api_token": "9PT0ScPlMQ5t3bzWkdzPObuvpfMiHSGbEVxXJdxP",
+    "checkout_url": "https://go.comudaarte.com/subscribe/comu-anual",
+    "contact": {
+      "address": "",
+      "address_city": "",
+      "address_comp": "",
+      "address_country": "BR",
+      "address_district": "",
+      "address_number": "",
+      "address_state": "",
+      "address_state_full_name": "",
+      "address_zip_code": "",
+      "company_name": "",
+      "doc": "06473358919",
+      "email": "daniellacavalli@gmail.com",
+      "id": "9f576425-5ac7-437f-b99a-6571ea697b2d",
+      "lead": [],
+      "name": "Daniella Cavalli Caggiano",
+      "phone_local_code": "55",
+      "phone_number": "41999179804"
+    },
+    "contracts": [],
+    "dates": {
+      "canceled_at": "2025-07-08T12:42:22Z",
+      "confirmed_at": null,
+      "created_at": "2025-07-08T12:15:11Z",
+      "expires_at": null,
+      "ordered_at": "2025-07-08T12:14:22Z",
+      "unavailable_until": null,
+      "updated_at": "2025-07-08T12:42:22Z",
+      "warranty_until": null
+    },
+    "ecommerces": [],
+    "extras": {
+      "accepted_privacy_policy_url": 0,
+      "accepted_terms_url": 0
+    },
+    "id": "9f5763da-ea96-477a-a8a3-5c1c213222f7",
+    "infrastructure": {
+      "city": "curitiba",
+      "city_lat_long": "-25.426899,-49.265198",
+      "country": "BR",
+      "facebook_browser_id": "fb.1.1750206495651.5561785499",
+      "ga_id": "GA1.1.155676995.1751976794",
+      "host": "go.comudaarte.com",
+      "ip": "2804:214:86e5:7acc:1:0:6ad5:b718",
+      "region": "pr",
+      "user_agent": "Mozilla/5.0 (Linux; Android 14; SM-G991B Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.117 Mobile Safari/537.36 Instagram 387.1.0.34.85 Android (34/14; 420dpi; 1080x2194; samsung; SM-G991B; o1s; exynos2100; pt_BR; 756711717; IABMV/1)"
+    },
+    "invoice": [],
+    "is_order_bump": 0,
+    "is_reissue": 0,
+    "items": [
+      {
+        "id": "1741887379",
+        "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/offers/9f23b5ee-620e-470d-be9b-766c70fe4dba.png",
+        "internal_id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+        "marketplace_id": "1741887379",
+        "marketplace_name": "pagarme2",
+        "name": "Comu Academy",
+        "offer": {
+          "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+          "name": "Comu Academy - Plano Anual (S/Juros)"
+        },
+        "producer": {
+          "contact_email": null,
+          "marketplace_id": "1741781464",
+          "name": "Comunidade Da Arte"
+        },
+        "qty": 1,
+        "total_value": 358.8,
+        "type": "plan",
+        "unit_value": 358.8
+      }
+    ],
+    "last_transaction": [],
+    "payment": {
+      "acquirer": {
+        "code": "",
+        "message": "",
+        "name": "",
+        "nsu": "",
+        "tid": ""
+      },
+      "affiliate_value": 0,
+      "can_try_again": 1,
+      "coupon": null,
+      "currency": "BRL",
+      "discount_value": 0,
+      "gross": 358.8,
+      "installments": {
+        "interest": 0,
+        "qty": 1,
+        "value": 358.8
+      },
+      "marketplace_id": "tr_2tYtSjzWkos1EHJNP",
+      "marketplace_name": "pagarme2",
+      "marketplace_value": 0,
+      "method": "other",
+      "net": 358.8,
+      "other": null,
+      "processing_times": {
+        "delay_in_seconds": "",
+        "finished_at": "",
+        "started_at": ""
+      },
+      "refund_reason": "",
+      "refuse_reason": "",
+      "tax": {
+        "rate": 0,
+        "value": 0
+      },
+      "total": 358.8
+    },
+    "product": {
+      "id": "1741887379",
+      "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/offers/9f23b5ee-620e-470d-be9b-766c70fe4dba.png",
+      "internal_id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+      "marketplace_id": "1741887379",
+      "marketplace_name": "pagarme2",
+      "name": "Comu Academy",
+      "offer": {
+        "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+        "name": "Comu Academy - Plano Anual (S/Juros)"
+      },
+      "producer": {
+        "contact_email": "",
+        "marketplace_id": "1741781464",
+        "name": "Comunidade Da Arte"
+      },
+      "qty": 1,
+      "total_value": 358.8,
+      "type": "plan",
+      "unit_value": 358.8
+    },
+    "shipment": {
+      "carrier": "",
+      "delivery_time": "",
+      "service": "",
+      "status": "",
+      "tracking": "",
+      "value": 0
+    },
+    "shipping": {
+      "name": "Standard",
+      "value": 0
+    },
+    "source": {
+      "checkout_source": "3116fb98-ef56-4b59-b3bf-453a3b35c14f",
+      "pptc": [],
+      "source": "funil06",
+      "utm_campaign": "120227248988170296",
+      "utm_content": "120227248988190296",
+      "utm_medium": "paid",
+      "utm_source": "ig",
+      "utm_term": "120227248988200296"
+    },
+    "status": "abandoned",
+    "subscription": [],
+    "type": "producer",
+    "webhook_type": "transaction"
+  },
+  "queue": "webhooks",
+  "request_id": "9f576ec6-5f21-49b7-95b7-12b73436ede2",
+  "return": "",
+  "url": "https://integrations.appmembros.com/webhooks/guru?api_key=62bd581d0308c5885a8f25c9fe0694efd19e39d8"
+}

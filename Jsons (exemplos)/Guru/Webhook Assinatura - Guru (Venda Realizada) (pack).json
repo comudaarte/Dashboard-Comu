@@ -1,0 +1,182 @@
+{
+  "attempts": 1,
+  "connection": "pubsub",
+  "payload": {
+    "affiliations": [],
+    "api_token": "9PT0ScPlMQ5t3bzWkdzPObuvpfMiHSGbEVxXJdxP",
+    "checkout_url": "https://go.comudaarte.com/subscribe/comu-anual",
+    "contact": {
+      "address": "",
+      "address_city": "",
+      "address_comp": "",
+      "address_country": "BR",
+      "address_district": "",
+      "address_number": "",
+      "address_state": "",
+      "address_state_full_name": "",
+      "address_zip_code": "",
+      "company_name": "",
+      "doc": "38024262827",
+      "email": "kahlorenzetti09@gmail.com",
+      "id": "9f80f85a-c885-4155-a864-117d3b9fbdef",
+      "lead": [],
+      "name": "Karina Lorenzetti Nogueira",
+      "phone_local_code": "55",
+      "phone_number": "14998020705"
+    },
+    "contracts": [],
+    "dates": {
+      "canceled_at": null,
+      "confirmed_at": "2025-07-29T04:32:23Z",
+      "created_at": "2025-07-29T04:27:38Z",
+      "expires_at": "2025-07-30T03:00:00Z",
+      "ordered_at": "2025-07-29T04:27:35Z",
+      "unavailable_until": "2025-08-28T04:32:23Z",
+      "updated_at": "2025-07-29T04:32:54Z",
+      "warranty_until": "2025-08-28T04:32:23Z"
+    },
+    "ecommerces": [],
+    "extras": {
+      "accepted_privacy_policy_url": 0,
+      "accepted_terms_url": 0
+    },
+    "id": "9f80fb95-e6b3-4145-a926-60ff9c56aa5e",
+    "infrastructure": {
+      "city": "tatui",
+      "city_lat_long": "-23.347508,-47.847422",
+      "country": "BR",
+      "facebook_browser_id": "fb.1.1753762679485.5798386431",
+      "ga_id": "GA1.1.94258106.1753762682",
+      "host": "go.comudaarte.com",
+      "ip": "2804:fec:d4f1:3b00:4d65:d871:5cd:45fe",
+      "region": "sp",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+    },
+    "invoice": [],
+    "is_order_bump": 1,
+    "is_reissue": 0,
+    "items": [
+      {
+        "id": "1752494625",
+        "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/products/9f63e2c7-71cb-4abb-accf-40712b8be5ac.png",
+        "internal_id": "9f637239-9274-4953-9fec-b2d12464c2f3",
+        "marketplace_id": "1752494625",
+        "marketplace_name": "pagarme2",
+        "name": "Guia do Desenho - Artepack",
+        "offer": {
+          "id": "9f6373f2-acdd-4fcc-8641-7bd015b1c608",
+          "name": "Pack de Ebooks (R$67)"
+        },
+        "producer": {
+          "contact_email": null,
+          "marketplace_id": "1741781464",
+          "name": "Comunidade Da Arte"
+        },
+        "qty": 6,
+        "total_value": 67.02,
+        "type": "product",
+        "unit_value": 11.17
+      }
+    ],
+    "last_transaction": {
+      "id": "9f80fb3a-4190-4f6f-8c74-f48c27dbbc68",
+      "url": "https://digitalmanager.guru/admin/transactions/pagarme2/ch_PbLpOZH1DfdGmzlg"
+    },
+    "payment": {
+      "acquirer": {
+        "code": "0",
+        "message": "",
+        "name": "none",
+        "nsu": "4039018993",
+        "tid": "4039018993"
+      },
+      "affiliate_value": 0,
+      "can_try_again": 1,
+      "coupon": null,
+      "currency": "BRL",
+      "discount_value": 0,
+      "gross": 67.02,
+      "installments": {
+        "interest": 0,
+        "qty": 1,
+        "value": 67.02
+      },
+      "marketplace_id": "ch_2je794OuAuJoRAxN",
+      "marketplace_name": "pagarme2",
+      "marketplace_value": 0.8,
+      "method": "pix",
+      "net": 66.22,
+      "pix": {
+        "expiration_date": "2025-07-30",
+        "qrcode": {
+          "signature": "00020101021226820014br.gov.bcb.pix2560pix.stone.com.br/pix/v2/ca858279-4d61-4681-b80f-50257d766794520400005303986540567.025802BR5925PAGAR.ME INSTITUICAO DE P6014RIO DE JANEIRO6229052518cc714a0ca26070bdfb97230630400ED",
+          "url": "https://go.comudaarte.com/api/checkout/invoices/9f80fb95-e6b3-4145-a926-60ff9c56aa5e/qrcodes/pix"
+        }
+      },
+      "processing_times": {
+        "delay_in_seconds": 0,
+        "finished_at": "2025-07-29T04:27:36.321Z",
+        "started_at": "2025-07-29T04:27:35.402Z"
+      },
+      "refund_reason": "",
+      "refuse_reason": " (0)",
+      "tax": {
+        "rate": 0,
+        "value": 0
+      },
+      "total": 67.02
+    },
+    "product": {
+      "id": "1752494625",
+      "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/products/9f63e2c7-71cb-4abb-accf-40712b8be5ac.png",
+      "internal_id": "9f637239-9274-4953-9fec-b2d12464c2f3",
+      "marketplace_id": "1752494625",
+      "marketplace_name": "pagarme2",
+      "name": "Guia do Desenho - Artepack",
+      "offer": {
+        "id": "9f6373f2-acdd-4fcc-8641-7bd015b1c608",
+        "name": "Pack de Ebooks (R$67)"
+      },
+      "producer": {
+        "contact_email": "",
+        "marketplace_id": "1741781464",
+        "name": "Comunidade Da Arte"
+      },
+      "qty": 6,
+      "total_value": 67.02,
+      "type": "product",
+      "unit_value": 11.17
+    },
+    "self_attribution": null,
+    "shipment": {
+      "carrier": "",
+      "delivery_time": "",
+      "service": "",
+      "status": "",
+      "tracking": "",
+      "value": 0
+    },
+    "shipping": {
+      "name": "Standard",
+      "value": 0
+    },
+    "source": {
+      "checkout_source": "142dffed-ebd9-4cd6-9ff9-83f0109771fe",
+      "pptc": [],
+      "source": "home",
+      "utm_campaign": null,
+      "utm_content": null,
+      "utm_medium": null,
+      "utm_source": null,
+      "utm_term": null
+    },
+    "status": "approved",
+    "subscription": [],
+    "type": "producer",
+    "webhook_type": "transaction"
+  },
+  "queue": "webhooks",
+  "request_id": "9f80fd8e-36da-4244-ab3d-76032d1ac556",
+  "return": "",
+  "url": "https://integrations.appmembros.com/webhooks/guru?api_key=62bd581d0308c5885a8f25c9fe0694efd19e39d8"
+}

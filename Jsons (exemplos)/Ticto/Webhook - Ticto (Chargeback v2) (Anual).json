@@ -1,0 +1,106 @@
+{
+  "status_date": "2025-06-06 21:52:51",
+  "checkout_url": "https://checkout.ticto.app/OC8393524",
+  "item": {
+    "amount": 35880,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OC8393524",
+    "product_name": "Comunidade da Arte - Anual",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Anual",
+    "offer_id": 55946,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41146,
+    "members_portal_id": null,
+    "days_of_access": 365
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2026-05-25 00:00:00",
+      "canceled_at": null,
+      "change_card_url": "https://dash.ticto.com.br/change-card/157708?orderCode=TOC719942505TDF6ZY&email=contatovisualartrj@gmail.com",
+      "successful_charges": 1,
+      "interval": 12,
+      "id": 157708
+    }
+  ],
+  "telefone": "21995421017",
+  "coproducers": [],
+  "phone_number_customer": "21995421017",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "event": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 2156,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 30754,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "COMUNIDADE DA ARTE LTDA",
+    "cms": "307.54",
+    "pid": "",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC4156F250557535G1E",
+    "cards": [
+      {
+        "first_digits": "543882",
+        "holder": "Vera Lucia Costa Pereira ",
+        "brand": "master",
+        "last_digits": "9278"
+      }
+    ]
+  },
+  "status": "chargeback",
+  "order": {
+    "paid_amount": 35880,
+    "order_date": "2024-05-25 20:37:28",
+    "id": 1057211,
+    "installments": 4,
+    "hash": "TOC719942505TDF6ZY",
+    "transaction_hash": "TPC4156F250557535G1E"
+  },
+  "customer": {
+    "code": "UDD7CB313",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "21",
+      "number": "995421017"
+    },
+    "is_foreign": false,
+    "cpf": "13068398746",
+    "name": "Fernando Carneiro da Silva Junior",
+    "language": null,
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "contatovisualartrj@gmail.com",
+    "email": "contatovisualartrj@gmail.com"
+  }
+}

@@ -1,0 +1,54 @@
+# Docker Compose configuration 
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: dashboardcomu_db
+    restart: always
+    environment:
+      POSTGRES_DB: metrics_db
+      POSTGRES_USER: metrics_user
+      POSTGRES_PASSWORD: asdfghjkl
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U metrics_user -d metrics_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  alembic:
+    image: python:3.10
+    container_name: dashboardcomu_alembic
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    working_dir: /app/src
+    environment:
+      - PIP_DISABLE_PIP_VERSION_CHECK=1
+      - PIP_NO_CACHE_DIR=1
+    command: >
+      sh -c "pip install -r /app/requirements.txt &&
+             alembic -c alembic.ini upgrade head"
+  api:
+    build: .
+    container_name: dashboardcomu_api
+    command: python -m src.main
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app/src
+      - DATABASE_URL=postgresql://metrics_user:asdfghjkl@db:5432/metrics_db
+      # Outras variáveis do seu .env se quiser sobrescrever
+    ports:
+      - "8000:8000"  # API FastAPI
+      - "8052:8052"  # Dashboard Dash
+    depends_on:
+      - db
+
+volumes:
+  postgres_data: 

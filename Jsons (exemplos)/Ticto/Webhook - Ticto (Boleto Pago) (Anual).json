@@ -1,0 +1,112 @@
+{
+  "status_date": "2025-06-28 04:02:32",
+  "checkout_url": "https://checkout.ticto.app/OC8393524",
+  "item": {
+    "amount": 35880,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OC8393524",
+    "product_name": "Comunidade da Arte - Anual",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Anual",
+    "offer_id": 55946,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41146,
+    "members_portal_id": null,
+    "days_of_access": 365
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2026-06-29 00:00:00",
+      "canceled_at": null,
+      "change_card_url": "https://dash.ticto.com.br/change-card/174233?orderCode=TOB12906KWF66SC&email=duda.araujow@gmail.com",
+      "successful_charges": 2,
+      "interval": 12,
+      "id": 174233
+    }
+  ],
+  "telefone": "11968814163",
+  "coproducers": [],
+  "phone_number_customer": "11968814163",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "event": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 2333,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 33298,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "COMUNIDADE DA ARTE LTDA",
+    "cms": "332.98",
+    "pid": "",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "bank_slip",
+  "transaction": {
+    "bank_slip_url": "https://checkout.ticto.app/bankslip/TOB12906KWF66SC",
+    "bank_slip_code": "03399543492031430637299325201012111320000035880",
+    "hash": "TPB114E42706Z0E38WZ6",
+    "bank_slip_pdf": "https://live.adyen.com/hpp/generationBoleto.shtml?data=BQABAQAPk9tvcwIVUNSao6uNs462UJTjrB1x%2B6awy%2FgNeNEA0ZHw84gRgpLkFV9MfaB1J3vI22KctJUbFeDaPjO%2FDe8Ctwl6zdi20qHEoLUOU5PPdvr6tX0CJUr6k7KGgJDGwb8YM3%2BDJGv6BbOQpCDcTuV9tHoP8%2FjYS0kEqBMzSOvFVyi0pVu7weN2M6hh2HipTJTPRcv7vlk%2Fgj9sCIJz6Heiw522rFW1h6u%2FE%2BdgPvHGRhaZdXdQFGrcd7dovZZOPty2B82pL7pFDy8tiPUp7kWZGr%2FGwM3UR40VUGZoUV7OLegoirSh0W7kY%2BNvBvhp1%2Bs8zwFjgdb1JTkKcyCYMy%2B8DNh4%2F%2FXpbIgbEldylwAAAF%2FE2FbogghxpVO482mKKCeQ0iqnxKqFDXTbBXZPoRJ2MqBJZGYfK4fdQYvaNW9EYG03X2NR4zyH%2FV5IH7TGmg853VPINRW6yVnkUrb%2BWo0SC4A3cRNt71v7S2i8ZZoIY1oLJ4UU5%2BjuqeYAMUPmmrKplNxu6YBKGAnUZ20uwzD2%2Biud2b9AMsFuMKDNaEKXf2LApeTsPah7gCJHIN3rCx7YJ4CjzI%2BhwBVOqo5gGYGXmlITmUFcmJTZX%2BJ0bt8T9kOgQ58byLdNZ8gEJt62xaJnTmBquGZAumyQ1LETOmBSq5qbMe2SkTeu7A6oGd0r0VIaeWT9wKMenpBmwdVM16ZWUFhwbvFFyw%3D%3D"
+  },
+  "status": "authorized",
+  "order": {
+    "paid_amount": 35880,
+    "order_date": "2024-06-29 23:07:52",
+    "id": 1167583,
+    "installments": 1,
+    "hash": "TOB12906KWF66SC",
+    "transaction_hash": "TPB114E42706Z0E38WZ6"
+  },
+  "customer": {
+    "country": {
+      "flag": {
+        "src": "countries_flags/br.svg"
+      },
+      "dial_code": "+55",
+      "languages": ["Portuguese"],
+      "name": "Brazil",
+      "currency": "BRL",
+      "region": "Americas",
+      "iso_code": "BR"
+    },
+    "code": "U66698D31",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "11",
+      "number": "968814163"
+    },
+    "is_foreign": false,
+    "cpf": "46374375807",
+    "name": "Maria Eduarda Araujo Damasceno Faustino",
+    "language": "pt-BR",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "duda.araujow@gmail.com",
+    "email": "duda.araujow@gmail.com"
+  }
+}

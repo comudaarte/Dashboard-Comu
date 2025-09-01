@@ -1,0 +1,164 @@
+# =============================================================================
+# GITIGNORE PARA PRODUÇÃO - DASHBOARD COMU
+# =============================================================================
+# 
+# Este arquivo define quais arquivos NÃO devem ser enviados para o GitHub.
+# 
+# IMPORTANTE:
+# - NUNCA commite arquivos com senhas ou tokens
+# - NUNCA commite arquivos de configuração local
+# - NUNCA commite logs ou dados sensíveis
+#
+# Autor: Dashboard Comu Team
+# Data: 2025
+# =============================================================================
+
+# =============================================================================
+# ARQUIVOS DE CONFIGURAÇÃO SENSÍVEIS
+# =============================================================================
+
+# Arquivos de ambiente com senhas
+.env
+.env.local
+.env.production
+.env.staging
+
+# Configurações específicas do servidor
+config/
+secrets/
+ssl/
+certificates/
+
+# =============================================================================
+# LOGS E DADOS
+# =============================================================================
+
+# Logs da aplicação
+logs/
+*.log
+*.log.*
+
+# Dados do banco
+backup_logs/
+*.sql
+*.sql.gz
+*.dump
+
+# Dados exportados
+dados_exportados/
+relatorios/
+json_pages/
+
+# =============================================================================
+# ARQUIVOS TEMPORÁRIOS
+# =============================================================================
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Cache
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =============================================================================
+# SISTEMA OPERACIONAL
+# =============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# =============================================================================
+# IDEs E EDITORES
+# =============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+
+# Volumes Docker
+docker-volumes/
+postgres_data/
+
+# =============================================================================
+# DESENVOLVIMENTO
+# =============================================================================
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# =============================================================================
+# PRODUÇÃO
+# =============================================================================
+
+# Arquivos de produção específicos
+production/
+staging/
+
+# Certificados SSL
+*.pem
+*.key
+*.crt
+*.p12
+
+# =============================================================================
+# BACKUP E RECUPERAÇÃO
+# =============================================================================
+
+# Backups automáticos
+backup_*.sql
+backup_*.sql.gz
+*.backup
+
+# =============================================================================
+# MONITORAMENTO
+# =============================================================================
+
+# Logs de monitoramento
+monitoring/
+metrics/
+
+# =============================================================================
+# NOTAS
+# =============================================================================
+
+# Lembre-se:
+# 1. Sempre verifique o que está sendo commitado
+# 2. Use variáveis de ambiente para dados sensíveis
+# 3. Configure secrets no GitHub Actions
+# 4. Mantenha este arquivo atualizado

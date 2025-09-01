@@ -1,0 +1,238 @@
+# =============================================================================
+# GITHUB ACTIONS - DEPLOY AUTOMÁTICO
+# =============================================================================
+# 
+# Este workflow automatiza o deploy do Dashboard Comu para produção.
+# 
+# O que ele faz:
+# 1. Executa quando há push na branch main
+# 2. Executa testes automatizados
+# 3. Conecta na VPS via SSH
+# 4. Puxa o código mais recente
+# 5. Reconstrói e reinicia os containers
+# 6. Testa se está funcionando
+# 7. Envia notificação de sucesso/erro
+#
+# Como configurar:
+# 1. Configure os secrets no GitHub (Settings > Secrets)
+# 2. Altere as configurações da VPS abaixo
+# 3. Faça push para a branch main
+#
+# Autor: Dashboard Comu Team
+# Data: 2025
+# =============================================================================
+
+name: 🚀 Deploy Automático - Dashboard Comu
+
+# =============================================================================
+# QUANDO EXECUTAR
+# =============================================================================
+
+on:
+  # Executar quando há push na branch main
+  push:
+    branches: [ main ]
+  
+  # Executar quando há pull request para main
+  pull_request:
+    branches: [ main ]
+  
+  # Executar manualmente
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Ambiente para deploy'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
+
+# =============================================================================
+# VARIÁVEIS DE AMBIENTE
+# =============================================================================
+
+env:
+  # ⚠️ ALTERE ESTAS CONFIGURAÇÕES PARA SUA VPS
+  VPS_HOST: ${{ secrets.VPS_HOST }}
+  VPS_USER: ${{ secrets.VPS_USER }}
+  VPS_PORT: ${{ secrets.VPS_PORT }}
+  PROJECT_DIR: ${{ secrets.PROJECT_DIR }}
+  
+  # Configurações do projeto
+  DOCKER_REGISTRY: ghcr.io
+  IMAGE_NAME: dashboard-comu
+
+# =============================================================================
+# JOBS
+# =============================================================================
+
+jobs:
+  # =============================================================================
+  # TESTES AUTOMATIZADOS
+  # =============================================================================
+  
+  test:
+    name: 🧪 Executar Testes
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: 📦 Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 🧪 Executar testes unitários
+      run: |
+        python -m pytest tests/ -v --tb=short
+        
+    - name: 🔍 Executar testes de integração
+      run: |
+        python src/scripts/test_integracao_dashboard.py
+        
+    - name: 📊 Executar testes de métricas
+      run: |
+        python src/scripts/test_fase1_metricas.py
+        python src/scripts/test_fase4_metricas.py
+
+  # =============================================================================
+  # BUILD DA IMAGEM DOCKER
+  # =============================================================================
+  
+  build:
+    name: 🏗️ Build da Imagem Docker
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: 🐳 Configurar Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: 🔐 Login no GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.DOCKER_REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 🏗️ Build e push da imagem
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:latest
+          ${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  # =============================================================================
+  # DEPLOY PARA PRODUÇÃO
+  # =============================================================================
+  
+  deploy:
+    name: 🚀 Deploy para Produção
+    runs-on: ubuntu-latest
+    needs: [test, build]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 📥 Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: 🔐 Configurar SSH
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
+    - name: 🚀 Deploy na VPS
+      run: |
+        echo "🚀 Iniciando deploy na VPS..."
+        
+        # Verificar conexão SSH
+        ssh -o StrictHostKeyChecking=no -p ${{ env.VPS_PORT }} ${{ env.VPS_USER }}@${{ env.VPS_HOST }} "echo 'Conexão SSH OK'"
+        
+        # Criar diretório se não existir
+        ssh -p ${{ env.VPS_PORT }} ${{ env.VPS_USER }}@${{ env.VPS_HOST }} "
+          if [ ! -d '${{ env.PROJECT_DIR }}' ]; then
+            mkdir -p '${{ env.PROJECT_DIR }}'
+          fi
+        "
+        
+        # Copiar arquivos para a VPS
+        scp -o StrictHostKeyChecking=no -P ${{ env.VPS_PORT }} -r . ${{ env.VPS_USER }}@${{ env.VPS_HOST }}:${{ env.PROJECT_DIR }}/
+        
+        # Executar deploy na VPS
+        ssh -p ${{ env.VPS_PORT }} ${{ env.VPS_USER }}@${{ env.VPS_HOST }} "
+          cd ${{ env.PROJECT_DIR }}
+          
+          echo '🛑 Parando containers antigos...'
+          docker-compose -f docker-compose.prod.yml down || true
+          
+          echo '🏗️ Construindo containers...'
+          docker-compose -f docker-compose.prod.yml build --no-cache
+          
+          echo '🚀 Iniciando containers...'
+          docker-compose -f docker-compose.prod.yml up -d
+          
+          echo '⏳ Aguardando containers iniciarem...'
+          sleep 30
+          
+          echo '🔍 Verificando status dos containers...'
+          docker-compose -f docker-compose.prod.yml ps
+          
+          echo '🧪 Testando API...'
+          curl -f http://localhost:8000/api/health || exit 1
+          
+          echo '📊 Testando Dashboard...'
+          curl -f http://localhost:8052 || exit 1
+          
+          echo '✅ Deploy concluído com sucesso!'
+        "
+        
+    - name: 📧 Notificação de sucesso
+      if: success()
+      run: |
+        echo "✅ Deploy concluído com sucesso!"
+        echo "📊 Dashboard: http://${{ env.VPS_HOST }}:8052"
+        echo "🔗 API: http://${{ env.VPS_HOST }}:8000"
+        
+    - name: 📧 Notificação de erro
+      if: failure()
+      run: |
+        echo "❌ Deploy falhou!"
+        echo "Verifique os logs acima para mais detalhes."
+
+  # =============================================================================
+  # LIMPEZA
+  # =============================================================================
+  
+  cleanup:
+    name: 🧹 Limpeza
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: always()
+    
+    steps:
+    - name: 🧹 Limpar cache do Docker
+      run: |
+        docker system prune -f
+        
+    - name: 📊 Relatório final
+      run: |
+        echo "🏁 Workflow concluído!"
+        echo "📅 Data: $(date)"
+        echo "🔗 Commit: ${{ github.sha }}"
+        echo "👤 Autor: ${{ github.actor }}"

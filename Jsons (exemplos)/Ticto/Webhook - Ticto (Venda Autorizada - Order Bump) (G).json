@@ -1,0 +1,127 @@
+{
+  "status_date": "2024-09-28 18:26:20",
+  "checkout_url": "https://checkout.ticto.app/O0AB56C79",
+  "item": {
+    "amount": 1790,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "O0AB56C79",
+    "product_name": "Como Criar Personagens?",
+    "trial_days": null,
+    "offer_name": "CCP - Acesso Vitalício",
+    "offer_id": 39843,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 28836,
+    "members_portal_id": null,
+    "days_of_access": null
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 0,
+      "max_charges": null,
+      "next_charge": "2025-09-28 00:00:00",
+      "canceled_at": null,
+      "successful_charges": 1,
+      "interval": 12,
+      "id": 226249
+    }
+  ],
+  "telefone": "83988007711",
+  "coproducers": [],
+  "phone_number_customer": "83988007711",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 2095,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": {
+    "code": "OC8393524",
+    "phone": "(83) 98800-7711",
+    "product_id": "41146",
+    "name": "Bruno Giovanni Rodrigues Filgueira Galdino",
+    "currency": "BRL",
+    "offer_code": "OC8393524",
+    "event": "PageView",
+    "slug": "home",
+    "email": "bruno.cadeira.luz@gmail.com",
+    "payment_method": "credit_card"
+  },
+  "producer": {
+    "amount": 1324,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "Comunidade da Arte",
+    "cms": "13.24",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC12AC5D2809HRQ730UX",
+    "cards": [
+      {
+        "first_digits": "223525",
+        "holder": "bruno g r f galdino",
+        "brand": "master",
+        "last_digits": "3889"
+      }
+    ]
+  },
+  "status": "authorized",
+  "order": {
+    "paid_amount": 37670,
+    "order_date": "2024-09-28 18:26:17",
+    "id": 1527032,
+    "installments": 12,
+    "hash": "TOC6DAF122809HDH63BC",
+    "transaction_hash": "TPC12AC5D2809HRQ730UX"
+  },
+  "customer": {
+    "country": {
+      "flag": {
+        "src": "countries_flags/br.svg"
+      },
+      "dial_code": "+55",
+      "languages": [
+        "Portuguese"
+      ],
+      "name": "Brazil",
+      "currency": "BRL",
+      "region": "Americas",
+      "iso_code": "BR"
+    },
+    "code": "UC18985C8",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "83",
+      "number": "988007711"
+    },
+    "is_foreign": false,
+    "cpf": "04365077309",
+    "name": "Bruno Giovanni Rodrigues Filgueira Galdino",
+    "language": "pt-BR",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "bruno.cadeira.luz@gmail.com",
+    "email": "bruno.cadeira.luz@gmail.com"
+  }
+}

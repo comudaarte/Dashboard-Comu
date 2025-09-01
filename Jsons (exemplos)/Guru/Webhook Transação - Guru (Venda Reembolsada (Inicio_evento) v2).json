@@ -1,0 +1,209 @@
+{
+  "attempts": 1,
+  "connection": "pubsub",
+  "payload": {
+    "affiliations": [],
+    "api_token": "9PT0ScPlMQ5t3bzWkdzPObuvpfMiHSGbEVxXJdxP",
+    "checkout_url": "https://go.comudaarte.com/subscribe/comu-anual",
+    "contact": {
+      "address": "",
+      "address_city": "",
+      "address_comp": "",
+      "address_country": "BR",
+      "address_district": "",
+      "address_number": "",
+      "address_state": "",
+      "address_state_full_name": "",
+      "address_zip_code": "",
+      "company_name": "",
+      "doc": "42423150822",
+      "email": "carlojuan1508@gmail.com",
+      "id": "9f292ad5-f0de-4e04-8153-0a0699acf9fc",
+      "lead": [],
+      "name": "Juan Carlo Silva De Lima",
+      "phone_local_code": "55",
+      "phone_number": "12991426974"
+    },
+    "contracts": [],
+    "dates": {
+      "canceled_at": "2025-06-18T14:51:49Z",
+      "confirmed_at": "2025-06-15T12:47:40Z",
+      "created_at": "2025-06-15T12:46:51Z",
+      "expires_at": null,
+      "ordered_at": "2025-06-15T12:46:14Z",
+      "unavailable_until": "2025-07-15T12:47:40Z",
+      "updated_at": "2025-06-18T14:51:49Z",
+      "warranty_until": "2025-07-15T12:47:40Z"
+    },
+    "ecommerces": [],
+    "extras": {
+      "accepted_privacy_policy_url": 0,
+      "accepted_terms_url": 0
+    },
+    "id": "9f292a9e-3501-4436-97b4-ab9d0555b4e3",
+    "infrastructure": {
+      "city": "campinas",
+      "city_lat_long": "-22.909938,-47.062633",
+      "country": "BR",
+      "facebook_browser_id": "fb.1.1749989589152.9314946193",
+      "ga_id": "GA1.1.1542958063.1749990659",
+      "host": "go.comudaarte.com",
+      "ip": "179.125.214.245",
+      "region": "sp",
+      "user_agent": "Mozilla/5.0 (Linux; Android 15; SM-G991B Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/137.0.7151.88 Mobile Safari/537.36 Instagram 384.0.0.46.83 Android (35/15; 480dpi; 1080x2400; samsung; SM-G991B; o1s; exynos2100; pt_BR; 746325133)"
+    },
+    "invoice": {
+      "charge_at": "2025-06-15",
+      "created_at": "2025-06-15T12:47:43Z",
+      "cycle": 1,
+      "discount_value": 0,
+      "id": "in_jMxhBYayuAXlETIXj",
+      "increment_value": 0,
+      "period_end": "2026-06-15",
+      "period_start": "2025-06-15",
+      "status": "paid",
+      "tax_value": 0,
+      "tries": 0,
+      "try": 0,
+      "type": "cycle",
+      "value": 358.8
+    },
+    "is_order_bump": 0,
+    "is_reissue": 0,
+    "items": [
+      {
+        "id": "1741887379",
+        "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/offers/9f23b5ee-620e-470d-be9b-766c70fe4dba.png",
+        "internal_id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+        "marketplace_id": "1741887379",
+        "marketplace_name": "pagarme2",
+        "name": "Comu Academy",
+        "offer": {
+          "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+          "name": "Comunidade da Arte - Anual (S/Juros)"
+        },
+        "producer": {
+          "contact_email": null,
+          "marketplace_id": "1741781464",
+          "name": "Comunidade Da Arte"
+        },
+        "qty": 1,
+        "total_value": 358.8,
+        "type": "plan",
+        "unit_value": 358.8
+      }
+    ],
+    "last_transaction": [],
+    "payment": {
+      "acquirer": {
+        "code": "0000",
+        "message": "Transação aprovada com sucesso",
+        "name": "pagarme",
+        "nsu": "3992722002",
+        "tid": "3992722002"
+      },
+      "affiliate_value": 0,
+      "can_try_again": 1,
+      "coupon": null,
+      "credit_card": {
+        "brand": "mastercard",
+        "expiration_month": "06",
+        "expiration_year": "2033",
+        "first_digits": "550209",
+        "id": "card_v7ylKEaDFQtkKxMr",
+        "last_digits": "1699"
+      },
+      "currency": "BRL",
+      "discount_value": 0,
+      "gross": 358.8,
+      "installments": {
+        "interest": 0,
+        "qty": 12,
+        "value": 29.9
+      },
+      "marketplace_id": "ch_maYoA7KslsxAwxdk",
+      "marketplace_name": "pagarme2",
+      "marketplace_value": 10.26,
+      "method": "credit_card",
+      "net": 348.54,
+      "processing_times": {
+        "delay_in_seconds": 4,
+        "finished_at": "2025-06-15T12:47:40.852Z",
+        "started_at": "2025-06-15T12:47:35.881Z"
+      },
+      "refund_reason": "Não terá tempo para usufruir do plano no momento",
+      "refuse_reason": "Transação aprovada com sucesso (0000)",
+      "tax": {
+        "rate": 0,
+        "value": 0
+      },
+      "total": 358.8
+    },
+    "product": {
+      "id": "1741887379",
+      "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9e6a028c-8632-4923-87c1-bbc23b221d8d/images/offers/9f23b5ee-620e-470d-be9b-766c70fe4dba.png",
+      "internal_id": "9e6c7a03-acdf-45af-abc5-0e0ba41d54eb",
+      "marketplace_id": "1741887379",
+      "marketplace_name": "pagarme2",
+      "name": "Comu Academy",
+      "offer": {
+        "id": "9e942d92-da6b-40b2-ba26-d58829850a5d",
+        "name": "Comunidade da Arte - Anual (S/Juros)"
+      },
+      "producer": {
+        "contact_email": "",
+        "marketplace_id": "1741781464",
+        "name": "Comunidade Da Arte"
+      },
+      "qty": 1,
+      "total_value": 358.8,
+      "type": "plan",
+      "unit_value": 358.8
+    },
+    "shipment": {
+      "carrier": "",
+      "delivery_time": "",
+      "service": "",
+      "status": "",
+      "tracking": "",
+      "value": 0
+    },
+    "shipping": {
+      "name": "Standard",
+      "value": 0
+    },
+    "source": {
+      "checkout_source": "0e56bf29-1e93-44ed-ae65-24cf13594aa4",
+      "pptc": [],
+      "source": "funil06",
+      "utm_campaign": "120227248988170296",
+      "utm_content": "120227248988210296",
+      "utm_medium": "paid",
+      "utm_source": "ig",
+      "utm_term": "120227248988200296"
+    },
+    "status": "refunded",
+    "subscription": {
+      "can_cancel": 0,
+      "canceled_at": "2025-06-18T14:51:44Z",
+      "charged_every_days": 365,
+      "charged_times": 1,
+      "id": "sub_5DjHyRNz98WF59pX",
+      "internal_id": "9f292b25-3b7b-41d7-9fc0-ac0780d33d09",
+      "last_status": "canceled",
+      "last_status_at": "2025-06-18T14:51:44Z",
+      "name": "Comu Academy",
+      "started_at": "2025-06-15T12:47:43Z",
+      "subscription_code": "sub_5DjHyRNz98WF59pX",
+      "trial_days": 0,
+      "trial_finished_at": null,
+      "trial_started_at": null
+    },
+    "type": "producer",
+    "webhook_type": "transaction"
+  },
+  "queue": "webhooks",
+  "request_id": "9f2f608c-0a97-40a3-ad5f-d02c0117813f",
+  "return": "",
+  "url": "https://integrations.appmembros.com/webhooks/guru?api_key=62bd581d0308c5885a8f25c9fe0694efd19e39d8"
+}

@@ -1,0 +1,117 @@
+{
+  "status_date": "2025-06-28 17:01:14",
+  "checkout_url": "https://checkout.ticto.app/OC8393524",
+  "item": {
+    "amount": 35880,
+    "quantity": 1,
+    "members_classroom_id": null,
+    "refund_deadline": 7,
+    "offer_code": "OC8393524",
+    "product_name": "Comunidade da Arte - Anual",
+    "trial_days": 0,
+    "offer_name": "Comunidade da Arte - Anual",
+    "offer_id": 55946,
+    "coupon_name": null,
+    "coupon_id": null,
+    "product_id": 41146,
+    "members_portal_id": null,
+    "days_of_access": 365
+  },
+  "subscriptions": [
+    {
+      "failed_charges": 1,
+      "max_charges": null,
+      "next_charge": "2025-06-28 00:00:00",
+      "canceled_at": null,
+      "change_card_url": "https://dash.ticto.com.br/change-card/173918?orderCode=TOCCC26122806GVD66WF&email=lanternajoao@gmail.com",
+      "successful_charges": 1,
+      "interval": 12,
+      "id": 173918
+    }
+  ],
+  "telefone": "61992627299",
+  "coproducers": [],
+  "phone_number_customer": "61992627299",
+  "phone_local_code_customer": "",
+  "version": "2.0",
+  "tracking": {
+    "utm_term": "Não Informado",
+    "manychat_user_id": "Não Informado",
+    "utm_campaign": "Não Informado",
+    "src": "Não Informado",
+    "utm_medium": "Não Informado",
+    "sck": "Não Informado",
+    "event": "Não Informado",
+    "utm_source": "Não Informado",
+    "utm_content": "Não Informado"
+  },
+  "marketplace_commission": 1855,
+  "token": "AqmMaY4OjKCdxSwIk1bsGLtlOzTvlJQmZ2w3nEC6Edqn5am7uJZ88tTp1RuN2T8MD4aWVWvqFzh4M6hFKvFr1EjM4u7zvgNbwuIc",
+  "shipping": {
+    "delivery_days": null,
+    "amount": 0,
+    "type": null,
+    "method": null
+  },
+  "query_params": [],
+  "producer": {
+    "amount": 26427,
+    "phone": "5533333333333",
+    "document": "49204590000163",
+    "name": "COMUNIDADE DA ARTE LTDA",
+    "cms": "264.27",
+    "pid": "",
+    "id": 516779,
+    "email": "lucasrneves11@gmail.com"
+  },
+  "affiliates": [],
+  "commission_type": "producer",
+  "payment_method": "credit_card",
+  "transaction": {
+    "hash": "TPC12D9622806HIG7FBQ",
+    "cards": [
+      {
+        "first_digits": "515894",
+        "holder": "Anna G C Santana",
+        "brand": "master",
+        "last_digits": "8156"
+      }
+    ]
+  },
+  "status": "refused",
+  "order": {
+    "paid_amount": 37670,
+    "order_date": "2024-06-28 19:05:16",
+    "id": 1164938,
+    "installments": 12,
+    "hash": "TOCCC26122806GVD66WF",
+    "transaction_hash": "TPC12D9622806HIG7FBQ"
+  },
+  "customer": {
+    "country": {
+      "flag": {
+        "src": "countries_flags/br.svg"
+      },
+      "dial_code": "+55",
+      "languages": ["Portuguese"],
+      "name": "Brazil",
+      "currency": "BRL",
+      "region": "Americas",
+      "iso_code": "BR"
+    },
+    "code": "UCFFBD703",
+    "phone": {
+      "ddi": "+55",
+      "ddd": "61",
+      "number": "992627299"
+    },
+    "is_foreign": false,
+    "cpf": "92191495168",
+    "name": "João Pedro Santana Rezende",
+    "language": "pt-BR",
+    "cnpj": null,
+    "type": "person",
+    "email_confirmation": "lanternajoao@gmail.com",
+    "email": "lanternajoao@gmail.com"
+  }
+}

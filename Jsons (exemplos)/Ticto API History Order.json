@@ -1,0 +1,3023 @@
+{
+  "data": [
+    {
+      "id": 7745054,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1254835,
+      "affiliates": [],
+      "transaction": {
+        "id": 4558751,
+        "hash": "TPC12885B3007U0I64I1X",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Cartão bloqueado.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************0229"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 15:01:18",
+        "updated_at": "30/07/2025 15:01:20"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "00919288693",
+        "cnpj": null,
+        "name": "Genara Navarro Prata",
+        "type": "person",
+        "email": "gennaprata@outlook.com",
+        "phone": {
+          "ddd": "35",
+          "ddi": "+55",
+          "number": "991577777"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1254835,
+        "hash": "TOC1260122407AK2750N",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1595869,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 188873,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 15:01:18",
+      "updated_at": "30/07/2025 15:01:20"
+    },
+    {
+      "id": 7744411,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 3036542,
+      "affiliates": [],
+      "transaction": {
+        "id": 4558387,
+        "hash": "TPC126AFD3007G4B62SGR",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2611"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 1,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 14:50:00",
+        "updated_at": "30/07/2025 14:50:04"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70353126179",
+        "cnpj": null,
+        "name": "Rainara nunes barbosa",
+        "type": "person",
+        "email": "rainaranunesbarbosa@gmail.com",
+        "phone": {
+          "ddd": "66",
+          "ddi": "+55",
+          "number": "999017845"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 3036542,
+        "hash": "TOCBC751230074MX93FO",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3846421,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 468639,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 14:50:00",
+      "updated_at": "30/07/2025 14:50:04"
+    },
+    {
+      "id": 7744392,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 29084,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 3036533,
+      "affiliates": [],
+      "transaction": {
+        "id": 4558378,
+        "hash": "TPC67EE23007F4A4ZUY",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2611"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 1,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 14:46:57",
+        "updated_at": "30/07/2025 14:47:00"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70353126179",
+        "cnpj": null,
+        "name": "Rainara nunes barbosa",
+        "type": "person",
+        "email": "rainaranunesbarbosa@gmail.com",
+        "phone": {
+          "ddd": "66",
+          "ddi": "+55",
+          "number": "999017845"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 3036533,
+        "hash": "TOCB2B0630079J9920S",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3846407,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": null,
+      "is_smart_installment": null,
+      "approved_date": null,
+      "created_at": "30/07/2025 14:46:57",
+      "updated_at": "30/07/2025 14:47:00"
+    },
+    {
+      "id": 7744379,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 3036525,
+      "affiliates": [],
+      "transaction": {
+        "id": 4558370,
+        "hash": "TPC1277613007L8972DFS",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2611"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 1,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 14:45:08",
+        "updated_at": "30/07/2025 14:45:11"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70353126179",
+        "cnpj": null,
+        "name": "Rainara nunes barbosa",
+        "type": "person",
+        "email": "rainaranunesbarbosa@gmail.com",
+        "phone": {
+          "ddd": "66",
+          "ddi": "+55",
+          "number": "999017845"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 3036525,
+        "hash": "TOCAEEF123007XA438JP",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3846396,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": null,
+      "is_smart_installment": null,
+      "approved_date": null,
+      "created_at": "30/07/2025 14:45:08",
+      "updated_at": "30/07/2025 14:45:11"
+    },
+    {
+      "id": 7744375,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 3036522,
+      "affiliates": [],
+      "transaction": {
+        "id": 4558367,
+        "hash": "TPC124A233007N2V371JP",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2611"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 1,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 14:43:58",
+        "updated_at": "30/07/2025 14:44:01"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70353126179",
+        "cnpj": null,
+        "name": "Rainara nunes barbosa",
+        "type": "person",
+        "email": "rainaranunesbarbosa@gmail.com",
+        "phone": {
+          "ddd": "66",
+          "ddi": "+55",
+          "number": "999017845"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 3036522,
+        "hash": "TOC166E1230073UD46GX",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3846393,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": null,
+      "is_smart_installment": null,
+      "approved_date": null,
+      "created_at": "30/07/2025 14:43:59",
+      "updated_at": "30/07/2025 14:44:01"
+    },
+    {
+      "id": 7743591,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 33298,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1253082,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557945,
+        "hash": "TPP3FA53007ATP5A3F",
+        "status": "waiting_payment",
+        "return_code": "waiting_payment",
+        "refused_reason": "gateway.autorizou.waiting_payment",
+        "refused_label": null,
+        "payment_method": "pix",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": null,
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 13:02:03",
+        "updated_at": "30/07/2025 13:02:04"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "44713121894",
+        "cnpj": null,
+        "name": "Nickolas Fischer",
+        "type": "person",
+        "email": "nicfischer21@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "945673757"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1253082,
+        "hash": "TOP2307EJ5586N",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1593631,
+        "amount": 35880,
+        "status": "waiting_payment",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 188586,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 13:02:03",
+      "updated_at": "30/07/2025 13:02:04"
+    },
+    {
+      "id": 7743493,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 33298,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1251807,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557870,
+        "hash": "TPP8B7A3007U0C144E2",
+        "status": "waiting_payment",
+        "return_code": "waiting_payment",
+        "refused_reason": "gateway.autorizou.waiting_payment",
+        "refused_label": null,
+        "payment_method": "pix",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": null,
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 13:01:34",
+        "updated_at": "30/07/2025 13:01:35"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "49246892895",
+        "cnpj": null,
+        "name": "Maruan Oliveira Abdul Ghani",
+        "type": "person",
+        "email": "maruan.ghani185@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "971286204"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1251807,
+        "hash": "TOP2307HHN72BP",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1592073,
+        "amount": 35880,
+        "status": "waiting_payment",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 188399,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 13:01:34",
+      "updated_at": "30/07/2025 13:01:35"
+    },
+    {
+      "id": 7743487,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 33298,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1249684,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557864,
+        "hash": "TPPFCD730079YM30BD0",
+        "status": "waiting_payment",
+        "return_code": "waiting_payment",
+        "refused_reason": "gateway.autorizou.waiting_payment",
+        "refused_label": null,
+        "payment_method": "pix",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": null,
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 13:01:32",
+        "updated_at": "30/07/2025 13:01:33"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "07850776186",
+        "cnpj": null,
+        "name": "Yukee Kohatsu",
+        "type": "person",
+        "email": "yukeekohatsu.lm@gmail.com",
+        "phone": {
+          "ddd": "67",
+          "ddi": "+55",
+          "number": "991681618"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1249684,
+        "hash": "TOP2307SBU17CW",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1589516,
+        "amount": 35880,
+        "status": "waiting_payment",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 188096,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 13:01:32",
+      "updated_at": "30/07/2025 13:01:33"
+    },
+    {
+      "id": 7743275,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1247070,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557722,
+        "hash": "TPC12D5A83007XJD1XGM",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Cartão bloqueado.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************6328"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 13:01:03",
+        "updated_at": "30/07/2025 13:01:05"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "06231967190",
+        "cnpj": null,
+        "name": "gabriel martins rodrigues pimentel nascimento",
+        "type": "person",
+        "email": "gaeel.nascimento@gmail.com",
+        "phone": {
+          "ddd": "64",
+          "ddi": "+55",
+          "number": "993029585"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1247070,
+        "hash": "TOC61A61222076NA92CZ",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1586251,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 187578,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 13:01:03",
+      "updated_at": "30/07/2025 13:01:05"
+    },
+    {
+      "id": 7743224,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1246955,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557688,
+        "hash": "TPC125FF13007X5J62ZRG",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************3831"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 13:00:58",
+        "updated_at": "30/07/2025 13:01:00"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "01221840843",
+        "cnpj": null,
+        "name": "Mercia de Assis Albuquerque",
+        "type": "person",
+        "email": "mercia.assis@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "988856393"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1246955,
+        "hash": "TOCCB96122207REV73V3",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1586108,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 187556,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 13:00:58",
+      "updated_at": "30/07/2025 13:01:00"
+    },
+    {
+      "id": 7742315,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1240838,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557154,
+        "hash": "TPC128D323007QV020DEH",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2079"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 11:01:24",
+        "updated_at": "30/07/2025 11:01:26"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "07740011940",
+        "cnpj": null,
+        "name": "Carlos Eduardo Ribeiro",
+        "type": "person",
+        "email": "kadupola2@gmail.com",
+        "phone": {
+          "ddd": "42",
+          "ddi": "+55",
+          "number": "998581444"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1240838,
+        "hash": "TOC339B122007RIS48PH",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1578357,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 186673,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 11:01:24",
+      "updated_at": "30/07/2025 11:01:26"
+    },
+    {
+      "id": 7742302,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1238667,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557141,
+        "hash": "TPC12DD983007MBG75FIX",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação não permitida.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************1305"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 11:01:15",
+        "updated_at": "30/07/2025 11:01:18"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70308427157",
+        "cnpj": null,
+        "name": "Luiz Henrique Conti de Melo",
+        "type": "person",
+        "email": "savyor2021@gmail.com",
+        "phone": {
+          "ddd": "62",
+          "ddi": "+55",
+          "number": "982221055"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1238667,
+        "hash": "TOC594D122007DGE8ZK",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1575522,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 186348,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 11:01:15",
+      "updated_at": "30/07/2025 11:01:18"
+    },
+    {
+      "id": 7742273,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1239894,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557121,
+        "hash": "TPC1244DF3007BAX70HYX",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************1137"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 11:01:03",
+        "updated_at": "30/07/2025 11:01:06"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "04230092814",
+        "cnpj": null,
+        "name": "Ricardo Kalil Macari",
+        "type": "person",
+        "email": "rkmoon33@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "959853588"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1239894,
+        "hash": "TOC20431220079N36YK",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1577109,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 186519,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 11:01:04",
+      "updated_at": "30/07/2025 11:01:06"
+    },
+    {
+      "id": 7742154,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 3481,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 2363886,
+      "affiliates": [],
+      "transaction": {
+        "id": 4557038,
+        "hash": "TPC127003007X8397X4V",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 3990,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************4304"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 5,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 11:00:47",
+        "updated_at": "30/07/2025 11:00:51"
+      },
+      "offer": {
+        "id": 55942,
+        "code": "OCE4F9A1C",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "06163060750",
+        "cnpj": null,
+        "name": "THIAGO DA SILVA CHAVES GONCALVES",
+        "type": "person",
+        "email": "thiagopipoca2005@gmail.com",
+        "phone": {
+          "ddd": "21",
+          "ddi": "+55",
+          "number": "974693786"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 2363886,
+        "hash": "TOCBED9120031YL89VH",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 2994180,
+        "amount": 3990,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 374869,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 11:00:47",
+      "updated_at": "30/07/2025 11:00:51"
+    },
+    {
+      "id": 7741316,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1216805,
+      "affiliates": [],
+      "transaction": {
+        "id": 4556560,
+        "hash": "TPC120E743007SJR24X0W",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Número do cartão inválido.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************4054"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 09:00:54",
+        "updated_at": "30/07/2025 09:00:56"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "50527682810",
+        "cnpj": null,
+        "name": "Aline",
+        "type": "person",
+        "email": "alinehvl70@gmail.com",
+        "phone": {
+          "ddd": "19",
+          "ddi": "+55",
+          "number": "993100487"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1216805,
+        "hash": "TOC11DA121507IQ3309X",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1548108,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 183218,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 09:00:54",
+      "updated_at": "30/07/2025 09:00:56"
+    },
+    {
+      "id": 7738420,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 33298,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1203169,
+      "affiliates": [],
+      "transaction": {
+        "id": 4555048,
+        "hash": "TPC12A063007OYO84JB8",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************3131"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 03:02:09",
+        "updated_at": "30/07/2025 03:02:12"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "07822329146",
+        "cnpj": null,
+        "name": "Helias Gaspar",
+        "type": "person",
+        "email": "heliasmadara@gmail.com",
+        "phone": {
+          "ddd": "61",
+          "ddi": "+55",
+          "number": "986598106"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1203169,
+        "hash": "TOCC73E11007OA989FC",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1530379,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 180875,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 03:02:09",
+      "updated_at": "30/07/2025 03:02:12"
+    },
+    {
+      "id": 7738403,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1203030,
+      "affiliates": [],
+      "transaction": {
+        "id": 4555039,
+        "hash": "TPC1259DB3007BPN69DWM",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação fraudulenta.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2762"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 03:02:08",
+        "updated_at": "30/07/2025 03:02:10"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "44252717850",
+        "cnpj": null,
+        "name": "Victor Sodré",
+        "type": "person",
+        "email": "victor.sodres@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "982857416"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1203030,
+        "hash": "TOC263A121007JGN90YM",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1530197,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 180833,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 03:02:08",
+      "updated_at": "30/07/2025 03:02:10"
+    },
+    {
+      "id": 7738345,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1201410,
+      "affiliates": [],
+      "transaction": {
+        "id": 4555004,
+        "hash": "TPC122D443007SL031CCY",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************1582"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 03:02:03",
+        "updated_at": "30/07/2025 03:02:05"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "25094860801",
+        "cnpj": null,
+        "name": "Clodoaldo Alves Feitosa",
+        "type": "person",
+        "email": "clofeitos@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "947518057"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1201410,
+        "hash": "TOCB3D0121007B4L0VB",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1528171,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 180426,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 03:02:03",
+      "updated_at": "30/07/2025 03:02:05"
+    },
+    {
+      "id": 7738320,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1201564,
+      "affiliates": [],
+      "transaction": {
+        "id": 4554988,
+        "hash": "TPC12F41830076XV50KMI",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************4081"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 03:02:00",
+        "updated_at": "30/07/2025 03:02:02"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "47099295802",
+        "cnpj": null,
+        "name": "Letícia Vitória Freitas Dos Santos",
+        "type": "person",
+        "email": "leticia.vitoria0@hotmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "983796995"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1201564,
+        "hash": "TOC2D011210071P7264A",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1528346,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 180457,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 03:02:00",
+      "updated_at": "30/07/2025 03:02:02"
+    },
+    {
+      "id": 7737304,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 3481,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 2020476,
+      "affiliates": [],
+      "transaction": {
+        "id": 4554457,
+        "hash": "TPC1DCD93007QF618GHF",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transaçao recusada por suspeita de fraude.",
+        "payment_method": "credit_card",
+        "paid_amount": 3990,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************5233"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 7,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 03:00:34",
+        "updated_at": "30/07/2025 03:00:39"
+      },
+      "offer": {
+        "id": 55942,
+        "code": "OCE4F9A1C",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "15757571683",
+        "cnpj": null,
+        "name": "Rafael Kaique Ribeiro Silva",
+        "type": "person",
+        "email": "rafa1227.2006@gmail.com",
+        "phone": {
+          "ddd": "31",
+          "ddi": "+55",
+          "number": "998147693"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 2020476,
+        "hash": "TOCF33E11001AIJ80YC",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 2571992,
+        "amount": 3990,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 324863,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 03:00:35",
+      "updated_at": "30/07/2025 03:00:39"
+    },
+    {
+      "id": 7736564,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1185240,
+      "affiliates": [],
+      "transaction": {
+        "id": 4554088,
+        "hash": "TPC1210C63007XDO16JRD",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************3301"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 01:01:16",
+        "updated_at": "30/07/2025 01:01:19"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "70606436138",
+        "cnpj": null,
+        "name": "Sthephanie Briccett",
+        "type": "person",
+        "email": "sthephaniemescco@gmail.com",
+        "phone": {
+          "ddd": "64",
+          "ddi": "+55",
+          "number": "992342921"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1185240,
+        "hash": "TOCA498120507HQX63RK",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1507659,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 176944,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 01:01:16",
+      "updated_at": "30/07/2025 01:01:19"
+    },
+    {
+      "id": 7736536,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1184301,
+      "affiliates": [],
+      "transaction": {
+        "id": 4554071,
+        "hash": "TPC1208C03007LFD78II3",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************2398"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 01:01:11",
+        "updated_at": "30/07/2025 01:01:14"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "08053900739",
+        "cnpj": null,
+        "name": "Maria Engracia Prado Da Cunha",
+        "type": "person",
+        "email": "engraciaprado@hotmail.com",
+        "phone": {
+          "ddd": "51",
+          "ddi": "+55",
+          "number": "999142371"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1184301,
+        "hash": "TOCA65C1205074WQ67AM",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1506477,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 176808,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 01:01:12",
+      "updated_at": "30/07/2025 01:01:14"
+    },
+    {
+      "id": 7736456,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1184335,
+      "affiliates": [],
+      "transaction": {
+        "id": 4554008,
+        "hash": "TPC12621930077RT85NPA",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************7474"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 01:01:01",
+        "updated_at": "30/07/2025 01:01:04"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "67022103291",
+        "cnpj": null,
+        "name": "Raíssa Ágatha Maciel de Oliveira e Silva",
+        "type": "person",
+        "email": "alineevellynmaciel@gmail.com",
+        "phone": {
+          "ddd": "91",
+          "ddi": "+55",
+          "number": "982455228"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1184335,
+        "hash": "TOC25E51205075DB15OT",
+        "has_bump": true,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1506519,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 176797,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 01:01:01",
+      "updated_at": "30/07/2025 01:01:04"
+    },
+    {
+      "id": 7736404,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 3481,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 2442766,
+      "affiliates": [],
+      "transaction": {
+        "id": 4553972,
+        "hash": "TPC1DA2E3007QQB17K3Y",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Cartão restrito.",
+        "payment_method": "credit_card",
+        "paid_amount": 3990,
+        "freight_value": null,
+        "card": {
+          "brand": "elo",
+          "number": "************2665"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 4,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "30/07/2025 01:00:54",
+        "updated_at": "30/07/2025 01:00:57"
+      },
+      "offer": {
+        "id": 55942,
+        "code": "OCE4F9A1C",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "71064159109",
+        "cnpj": null,
+        "name": "Nicole Aparecida rezende",
+        "type": "person",
+        "email": "nicolerezenderuivinha@gmail.com",
+        "phone": {
+          "ddd": "64",
+          "ddi": "+55",
+          "number": "996010719"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 2442766,
+        "hash": "TOC872C10504LJ311FT",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 3094406,
+        "amount": 3990,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 382960,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "30/07/2025 01:00:54",
+      "updated_at": "30/07/2025 01:00:57"
+    },
+    {
+      "id": 7735025,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 3481,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1949522,
+      "affiliates": [],
+      "transaction": {
+        "id": 4553269,
+        "hash": "TPC1BB3D2907UVN16GUE",
+        "status": "authorized",
+        "return_code": "authorized",
+        "refused_reason": "gateway.autorizou.authorized",
+        "refused_label": null,
+        "payment_method": "credit_card",
+        "paid_amount": 3990,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************0151"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 8,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 21:00:31",
+        "updated_at": "29/07/2025 21:00:34"
+      },
+      "offer": {
+        "id": 55942,
+        "code": "OCE4F9A1C",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "54901635859",
+        "cnpj": null,
+        "name": "Jaziel Estêvão Cândido",
+        "type": "person",
+        "email": "newteenjaziel@gmail.com",
+        "phone": {
+          "ddd": "14",
+          "ddi": "+55",
+          "number": "996900659"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1949522,
+        "hash": "TOC4A28129125CA86ME",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 2485322,
+        "amount": 3990,
+        "status": "authorized",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 219235,
+      "is_smart_installment": 0,
+      "approved_date": "29/07/2025 21:00:34",
+      "created_at": "29/07/2025 21:00:31",
+      "updated_at": "29/07/2025 21:00:34"
+    },
+    {
+      "id": 7734135,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1273988,
+      "affiliates": [],
+      "transaction": {
+        "id": 4552832,
+        "hash": "TPC124EC629072ZJ32LGU",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************9203"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 19:05:44",
+        "updated_at": "29/07/2025 19:05:47"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "49027819807",
+        "cnpj": null,
+        "name": "Lucas Afonso",
+        "type": "person",
+        "email": "lucasafonso184@gmail.com",
+        "phone": {
+          "ddd": "12",
+          "ddi": "+55",
+          "number": "988993992"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1273988,
+        "hash": "TOC6D6E122907AXZ35OP",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1620227,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 192031,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "29/07/2025 19:05:44",
+      "updated_at": "29/07/2025 19:05:47"
+    },
+    {
+      "id": 7733796,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 25211,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1272377,
+      "affiliates": [],
+      "transaction": {
+        "id": 4552594,
+        "hash": "TPC128C122907XD5274FB",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Saldo insuficiente.",
+        "payment_method": "credit_card",
+        "paid_amount": 35880,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************6118"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 2,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 19:05:01",
+        "updated_at": "29/07/2025 19:05:03"
+      },
+      "offer": {
+        "id": 55946,
+        "code": "OC8393524",
+        "name": "Comunidade da Arte - Anual"
+      },
+      "product": {
+        "id": 41146,
+        "name": "Comunidade da Arte - Anual",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "10967755905",
+        "cnpj": null,
+        "name": "Millena Caobianco",
+        "type": "person",
+        "email": "mllenacaobianco@gmail.com",
+        "phone": {
+          "ddd": "42",
+          "ddi": "+55",
+          "number": "999318403"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1272377,
+        "hash": "TOC7F0612290770L9VQ",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1618187,
+        "amount": 35880,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 191800,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "29/07/2025 19:05:01",
+      "updated_at": "29/07/2025 19:05:03"
+    },
+    {
+      "id": 7733638,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 4416,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1167408,
+      "affiliates": [],
+      "transaction": {
+        "id": 4552491,
+        "hash": "TPC10292290707H62D5L",
+        "status": "refused",
+        "return_code": "refused",
+        "refused_reason": "gateway.autorizou.refused",
+        "refused_label": "Transação recusada pelo banco emissor ou adquirente.",
+        "payment_method": "credit_card",
+        "paid_amount": 4990,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************0406"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 14,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 19:04:47",
+        "updated_at": "29/07/2025 19:04:50"
+      },
+      "offer": {
+        "id": 62780,
+        "code": "OD84531E6",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "49261941800",
+        "cnpj": null,
+        "name": "Pedro Paim",
+        "type": "person",
+        "email": "paim.pedro2004@gmail.com",
+        "phone": {
+          "ddd": "11",
+          "ddi": "+55",
+          "number": "976664035"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1167408,
+        "hash": "TOCE87D12906SM161DJ",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1485205,
+        "amount": 4990,
+        "status": "refused",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 174211,
+      "is_smart_installment": 0,
+      "approved_date": null,
+      "created_at": "29/07/2025 19:04:47",
+      "updated_at": "29/07/2025 19:04:50"
+    },
+    {
+      "id": 7733634,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 3481,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 1820567,
+      "affiliates": [],
+      "transaction": {
+        "id": 4552487,
+        "hash": "TPC1EFFD2907HSQ56HE",
+        "status": "authorized",
+        "return_code": "authorized",
+        "refused_reason": "gateway.autorizou.authorized",
+        "refused_label": null,
+        "payment_method": "credit_card",
+        "paid_amount": 3990,
+        "freight_value": null,
+        "card": {
+          "brand": "visa",
+          "number": "************5617"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 9,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 19:04:46",
+        "updated_at": "29/07/2025 19:04:48"
+      },
+      "offer": {
+        "id": 55942,
+        "code": "OCE4F9A1C",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "01945805200",
+        "cnpj": null,
+        "name": "Vitor Ferreira Lima",
+        "type": "person",
+        "email": "vitorfelima@gmail.com",
+        "phone": {
+          "ddd": "91",
+          "ddi": "+55",
+          "number": "984206266"
+        },
+        "country": {
+          "flag": {
+            "src": "countries_flags/br.svg"
+          },
+          "name": "Brazil",
+          "region": "Americas",
+          "currency": "BRL",
+          "iso_code": "BR",
+          "dial_code": "+55",
+          "languages": [
+            "Portuguese"
+          ]
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 1820567,
+        "hash": "TOC34D112911F7V53TD",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 2329360,
+        "amount": 3990,
+        "status": "authorized",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 299665,
+      "is_smart_installment": 0,
+      "approved_date": "29/07/2025 19:04:48",
+      "created_at": "29/07/2025 19:04:46",
+      "updated_at": "29/07/2025 19:04:48"
+    },
+    {
+      "id": 7733591,
+      "type": "producer",
+      "commissioned_id": 516779,
+      "commissioned_name": "Lucas Neves",
+      "commission": 4416,
+      "producer_id": 516779,
+      "producer_name": "Lucas Neves",
+      "producer_email": "email@comunidadedaarte.com",
+      "producer_document": "49204590000163",
+      "value": null,
+      "order_id": 911160,
+      "affiliates": [],
+      "transaction": {
+        "id": 4552457,
+        "hash": "TPC1AC9529073OU62DN3",
+        "status": "authorized",
+        "return_code": "authorized",
+        "refused_reason": "gateway.autorizou.authorized",
+        "refused_label": null,
+        "payment_method": "credit_card",
+        "paid_amount": 4990,
+        "freight_value": null,
+        "card": {
+          "brand": "master",
+          "number": "************6014"
+        },
+        "is_card2": 0,
+        "invoice_sent": 0,
+        "occurrence": 17,
+        "is_latest_transaction": true,
+        "is_free": false,
+        "created_at": "29/07/2025 19:04:42",
+        "updated_at": "29/07/2025 19:04:44"
+      },
+      "offer": {
+        "id": 62780,
+        "code": "OD84531E6",
+        "name": "Comunidade da Arte - Mensal"
+      },
+      "product": {
+        "id": 41145,
+        "name": "Comunidade da Arte - Mensal",
+        "is_subscription": null,
+        "type": "subscription",
+        "refund_deadline": 7,
+        "has_invoice_integration": 0
+      },
+      "customer": {
+        "address": null,
+        "cpf": "25739306884",
+        "cnpj": null,
+        "name": "Alexandra Patricia Ferreira da Silva",
+        "type": "person",
+        "email": "alexandra.patricia17@gmail.com",
+        "phone": {
+          "ddd": "19",
+          "ddi": "+55",
+          "number": "981460153"
+        },
+        "country": {
+          "flag": null,
+          "name": null,
+          "region": null,
+          "currency": null,
+          "iso_code": null,
+          "dial_code": null,
+          "languages": null
+        },
+        "is_foreign": false
+      },
+      "order": {
+        "id": 911160,
+        "hash": "TOCE62412903FY693XA",
+        "has_bump": false,
+        "from_mozart": false,
+        "is_upsell": false,
+        "type": "main"
+      },
+      "order_item": {
+        "id": 1157447,
+        "amount": 4990,
+        "status": "authorized",
+        "quantity": 1
+      },
+      "is_card2": false,
+      "has_two_cards": false,
+      "bounced_email": null,
+      "subscription_id": 141157,
+      "is_smart_installment": 0,
+      "approved_date": "29/07/2025 19:04:44",
+      "created_at": "29/07/2025 19:04:42",
+      "updated_at": "29/07/2025 19:04:44"
+    }
+  ],
+  "links": {
+    "first": "https://glados.ticto.cloud/api/v1/orders/history?page=1",
+    "last": "https://glados.ticto.cloud/api/v1/orders/history?page=1095",
+    "prev": null,
+    "next": "https://glados.ticto.cloud/api/v1/orders/history?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1095,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Anterior",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=2",
+        "label": "2",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=3",
+        "label": "3",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=4",
+        "label": "4",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=5",
+        "label": "5",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=6",
+        "label": "6",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=7",
+        "label": "7",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=8",
+        "label": "8",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=9",
+        "label": "9",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=10",
+        "label": "10",
+        "active": false
+      },
+      {
+        "url": null,
+        "label": "...",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=1094",
+        "label": "1094",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=1095",
+        "label": "1095",
+        "active": false
+      },
+      {
+        "url": "https://glados.ticto.cloud/api/v1/orders/history?page=2",
+        "label": "Próximo &raquo;",
+        "active": false
+      }
+    ],
+    "path": "https://glados.ticto.cloud/api/v1/orders/history",
+    "per_page": 30,
+    "to": 30,
+    "total": 32829
+  }
+}
