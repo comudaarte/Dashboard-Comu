@@ -1,256 +1,204 @@
 """
-Callbacks para Integração das Métricas com o Dashboard
-====================================================
+Callbacks de Métricas
+====================
 
-Integra todas as métricas calculadas pelo MetricsCalculator
-com os componentes visuais do dashboard, substituindo
-dados sintéticos por dados reais do banco.
+Callbacks para atualização de métricas do dashboard com dados reais.
 """
 
 import dash
-from dash import Input, Output, State, callback_context
-from dash.exceptions import PreventUpdate
+from dash import Input, Output, State
 import logging
 from datetime import datetime, timedelta
-import traceback
 
 # Configuração de logging
 logger = logging.getLogger(__name__)
 
-
 def register_metrics_callbacks(app):
     """
-    Registra todos os callbacks relacionados às métricas.
+    Registra callbacks relacionados às métricas principais.
     
     Args:
         app: Aplicação Dash
     """
     
-    # ========================================================================
-    # CALLBACK PRINCIPAL: Atualiza todas as métricas do dashboard
-    # ========================================================================
     @app.callback(
-        [
-            # Grid Final de Métricas
-            Output('mrr-total', 'children'),
-            Output('arr-total', 'children'),
-            Output('mra-recorrencia', 'children'),
-            Output('mrr-growth', 'children'),
-            Output('mrr-mensal', 'children'),
-            Output('arr-mensal', 'children'),
-            Output('assinaturas-ativas', 'children'),
-            Output('assinaturas-canceladas', 'children'),
-            Output('mrr-anual', 'children'),
-            Output('arr-anual', 'children'),
-            Output('churn-rate', 'children'),
-            Output('retention-rate', 'children'),
-            Output('assinaturas-mes-atual', 'children'),
-            Output('assinaturas-mes-passado', 'children'),
-            
-            # Seção Principal
-            Output('faturamento-total', 'children'),
-            Output('quantidade-vendas', 'children'),
-            Output('quantidade-alunos', 'children'),
-            Output('ltv-geral', 'children'),
-            
-            # Seção Performance
-            Output('arpu', 'children'),
-            Output('cac', 'children'),
-            Output('roi', 'children'),
-            Output('margem-lucro', 'children'),
-            Output('nps', 'children'),
-            Output('customer-health', 'children'),
-            Output('conversion-rate', 'children'),
-            Output('revenue-growth', 'children')
-        ],
-        [
-            Input('date-picker', 'start_date'),
-            Input('date-picker', 'end_date'),
-            Input('refresh-button', 'n_clicks')
-        ],
-        prevent_initial_call=False
+        [Output("faturamento-total", "children"),
+         Output("quantidade-vendas", "children"),
+         Output("quantidade-alunos", "children"),
+         Output("ltv-geral", "children"),
+         Output("badge-crescimento-mes", "children"),
+         Output("badge-crescimento-ano", "children"),
+         Output("receita-bruta", "children")],
+        [Input("date-range-store", "data"),  # CORRIGIDO: usar dados reais das datas
+         Input("refresh-button", "n_clicks")]
     )
-    def update_all_metrics(start_date, end_date, refresh_clicks):
+    def update_all_metrics(date_range_data, refresh_clicks):
         """
-        Callback principal que atualiza todas as métricas do dashboard.
-        
-        Args:
-            start_date: Data de início do filtro
-            end_date: Data de fim do filtro
-            refresh_clicks: Contador de cliques no botão de refresh
-            
-        Returns:
-            Lista com todos os valores das métricas atualizadas
+        Atualiza TODAS as métricas principais com dados reais do banco.
         """
         try:
-            logger.info("🔄 Atualizando todas as métricas do dashboard")
+            logger.info("🔄 Iniciando atualização completa de métricas...")
+            logger.info(f"   Date range data: {date_range_data}")
+            logger.info(f"   Refresh cliques: {refresh_clicks}")
             
-            # Determina período de análise
-            if start_date and end_date:
-                start_dt = datetime.fromisoformat(start_date.replace('Z', '+00:00'))
-                end_dt = datetime.fromisoformat(end_date.replace('Z', '+00:00'))
-                periodo_dias = (end_dt - start_dt).days
+            # Inicializa variáveis
+            start_dt = None
+            end_dt = None
+            data_referencia = datetime.now()
+            periodo_dias = 30
+            
+            # Determina período de análise baseado nas datas selecionadas
+            if date_range_data and date_range_data.get('start_date') and date_range_data.get('end_date'):
+                start_date = date_range_data['start_date']
+                end_date = date_range_data['end_date']
+                
+                # Converte strings para datetime
+                if isinstance(start_date, str):
+                    start_dt = datetime.fromisoformat(start_date.replace('Z', '+00:00'))
+                else:
+                    start_dt = start_date
+                    
+                if isinstance(end_date, str):
+                    end_dt = datetime.fromisoformat(end_date.replace('Z', '+00:00'))
+                else:
+                    end_dt = end_date
+                
+                # CORREÇÃO: Define end_dt como final do dia (23:59:59) para incluir todas as transações do dia
+                end_dt = end_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+                
                 data_referencia = end_dt
-                logger.info(f"📅 Período selecionado: {start_dt.date()} até {end_dt.date()} ({periodo_dias} dias)")
+                periodo_dias = (end_dt.date() - start_dt.date()).days + 1  # +1 para incluir o dia final
+                logger.info(f"   Período selecionado: {start_dt.date()} a {end_dt.date()} ({periodo_dias} dias)")
+                logger.info(f"   Start datetime: {start_dt}")
+                logger.info(f"   End datetime: {end_dt}")
             else:
-                # Período padrão: últimos 30 dias
+                # Período padrão se não houver datas selecionadas
                 data_referencia = datetime.now()
                 periodo_dias = 30
-                logger.info(f"📅 Período padrão: últimos {periodo_dias} dias")
+                logger.info(f"   Usando período padrão: {periodo_dias} dias")
+                logger.info(f"   Data referência: {data_referencia}")
             
-            # Importa MetricsCalculator (importação local para evitar problemas de indentação)
+            # Importa MetricsCalculator
             try:
+                logger.info("   Importando MetricsCalculator...")
                 from services.metrics_calculator import MetricsCalculator
                 from database.connection import get_session
                 
                 # Cria sessão e calculadora
+                logger.info("   Criando sessão do banco...")
                 db_session = get_session()
                 calculator = MetricsCalculator(db_session)
                 
-                logger.info("✅ Conectado ao banco e criado MetricsCalculator")
+                logger.info("   Calculando métricas principais...")
                 
-                # ========================================================================
-                # CÁLCULO DE TODAS AS MÉTRICAS
-                # ========================================================================
+                # NOVA IMPLEMENTAÇÃO: Usa função específica do dashboard
+                if start_dt and end_dt:
+                    # Calcula todas as métricas usando a nova função
+                    dashboard_metrics = calculator.calculate_dashboard_metrics_for_period(
+                        start_date=start_dt,
+                        end_date=end_dt
+                    )
+                    
+                    # Extrai valores das métricas
+                    faturamento_total = dashboard_metrics.get('faturamento_total', 0)
+                    total_vendas = dashboard_metrics.get('total_vendas', 0)
+                    total_alunos = dashboard_metrics.get('total_alunos', 0)
+                    ltv_geral = dashboard_metrics.get('ltv_geral', 0)
+                    
+                    logger.info(f"   ✅ Faturamento Total: R$ {faturamento_total:.2f}")
+                    logger.info(f"   ✅ Total de Vendas: {total_vendas}")
+                    logger.info(f"   ✅ Total de Alunos: {total_alunos}")
+                    logger.info(f"   ✅ LTV Geral: R$ {ltv_geral:.2f}")
+                    
+                else:
+                    # Comportamento padrão se não houver datas selecionadas
+                    faturamento_total = 0
+                    total_vendas = 0
+                    total_alunos = 0
+                    ltv_geral = 0
+                    logger.info("   ⚠️ Sem datas selecionadas, usando valores padrão")
                 
-                # Métricas principais
-                mrr_data = calculator.calculate_mrr(data_referencia)
+                # 5. Crescimento mensal (mantém lógica atual)
+                crescimento_mes = 0.0
+                if periodo_dias >= 30:
+                    try:
+                        mrr_mes_atual = calculator.calculate_mrr(data_referencia)
+                        mrr_mes_anterior = calculator.calculate_mrr(data_referencia - timedelta(days=30))
+                        
+                        if mrr_mes_anterior.get('mrr_total', 0) > 0:
+                            crescimento_mes = ((mrr_mes_atual.get('mrr_total', 0) - mrr_mes_anterior.get('mrr_total', 0)) / mrr_mes_anterior.get('mrr_total', 0)) * 100
+                        logger.info(f"   ✅ Crescimento mensal: {crescimento_mes:.2f}%")
+                    except Exception as e:
+                        logger.warning(f"   ⚠️ Erro ao calcular crescimento mensal: {str(e)}")
+                
+                # 6. Crescimento anual (mantém lógica atual)
+                crescimento_ano = 0.0
+                if periodo_dias >= 365:
+                    try:
+                        mrr_ano_atual = calculator.calculate_mrr(data_referencia)
+                        mrr_ano_anterior = calculator.calculate_mrr(data_referencia - timedelta(days=365))
+                        
+                        if mrr_ano_anterior.get('mrr_total', 0) > 0:
+                            crescimento_ano = ((mrr_ano_atual.get('mrr_total', 0) - mrr_ano_anterior.get('mrr_total', 0)) / mrr_ano_anterior.get('mrr_total', 0)) * 100
+                        logger.info(f"   ✅ Crescimento anual: {crescimento_ano:.2f}%")
+                    except Exception as e:
+                        logger.warning(f"   ⚠️ Erro ao calcular crescimento anual: {str(e)}")
+                
+                # 7. ARR para receita bruta (mantém lógica atual)
                 arr_data = calculator.calculate_arr(data_referencia)
-                churn_data = calculator.calculate_churn_rate(periodo_dias)
-                ltv_data = calculator.calculate_ltv(data_referencia)
-                cac_data = calculator.calculate_cac(periodo_dias)
-                
-                # Métricas da FASE 1
-                assinaturas_ativas_data = calculator.calculate_active_subscriptions(data_referencia)
-                assinaturas_canceladas_data = calculator.calculate_canceled_subscriptions()
-                total_vendas_data = calculator.calculate_total_sales(data_referencia)
-                clientes_unicos_data = calculator.calculate_unique_customers(data_referencia)
-                mrr_growth_data = calculator.calculate_mrr_growth(periodo_dias)
-                mrr_mensal_data = calculator.calculate_mrr_by_plan_type('mensal', data_referencia)
-                arr_mensal_data = calculator.calculate_arr_by_plan_type('mensal', data_referencia)
-                mrr_anual_data = calculator.calculate_mrr_by_plan_type('anual', data_referencia)
-                arr_anual_data = calculator.calculate_arr_by_plan_type('anual', data_referencia)
-                
-                # Métricas da FASE 2
-                arpu_data = calculator.calculate_arpu(data_referencia)
-                retention_data = calculator.calculate_retention_rate(periodo_dias)
-                receita_anual_data = calculator.calculate_annual_revenue(data_referencia)
-                margem_lucro_data = calculator.calculate_profit_margin(data_referencia=data_referencia)
-                roi_data = calculator.calculate_roi(data_referencia=data_referencia)
-                assinaturas_por_mes_data = calculator.calculate_subscriptions_by_month(data_referencia.year)
-                ticket_medio_data = calculator.calculate_average_ticket(data_referencia)
-                
-                # Métricas da FASE 3
-                cpl_data = calculator.calculate_cpl(periodo_dias)
-                nps_data = calculator.calculate_nps(data_referencia)
-                mra_data = calculator.calculate_mra(data_referencia)
-                conversion_data = calculator.calculate_conversion_rate(periodo_dias)
-                health_score_data = calculator.calculate_customer_health_score(data_referencia)
-                revenue_growth_data = calculator.calculate_revenue_growth_rate(periodo_dias)
-                acquisition_velocity_data = calculator.calculate_customer_acquisition_velocity(periodo_dias)
-                
-                # Métricas da FASE 4
-                assinaturas_mes_atual_data = calculator.calculate_subscriptions_current_month(data_referencia)
-                assinaturas_mes_passado_data = calculator.calculate_subscriptions_previous_month(data_referencia)
-                
-                logger.info("✅ Todas as métricas calculadas com sucesso")
+                arr_total = arr_data.get('arr_total', 0)
+                logger.info(f"   ✅ ARR calculado: R$ {arr_total:.2f}")
                 
                 # Fecha sessão
                 db_session.close()
+                logger.info("   ✅ Sessão do banco fechada")
                 
-                # ========================================================================
-                # FORMATAÇÃO DOS VALORES PARA EXIBIÇÃO
-                # ========================================================================
+                # Formata valores para exibição
+                faturamento_total_formatted = f"R$ {faturamento_total:,.2f}"
+                quantidade_vendas = f"{total_vendas:,}"
+                quantidade_alunos = f"{total_alunos:,}"
+                ltv_geral_formatted = f"R$ {ltv_geral:,.2f}"
                 
-                # Grid Final de Métricas
-                mrr_total = f"R$ {mrr_data['mrr_total']:,.2f}" if mrr_data['mrr_total'] else "R$ 0,00"
-                arr_total = f"R$ {arr_data['arr_total']:,.2f}" if arr_data['arr_total'] else "R$ 0,00"
-                mra_recorrencia = f"{mra_data['mra_total']:,.0f}" if mra_data['mra_total'] else "0"
-                mrr_growth = f"{mrr_growth_data['crescimento_percentual']:+.1f}%" if mrr_growth_data['crescimento_percentual'] else "0,0%"
+                # CORRIGIDO: Badges com setas corretas baseadas no crescimento
+                if crescimento_mes >= 0:
+                    badge_crescimento_mes = f"↑{crescimento_mes:.1f}%"
+                else:
+                    badge_crescimento_mes = f"↓{abs(crescimento_mes):.1f}%"
                 
-                mrr_mensal = f"R$ {mrr_mensal_data['mrr_mensal']:,.2f}" if mrr_mensal_data['mrr_mensal'] else "R$ 0,00"
-                arr_mensal = f"R$ {arr_mensal_data['arr_mensal']:,.2f}" if arr_mensal_data['arr_mensal'] else "R$ 0,00"
-                assinaturas_ativas = f"{assinaturas_ativas_data['total_assinaturas_ativas']:,.0f}" if assinaturas_ativas_data['total_assinaturas_ativas'] else "0"
-                assinaturas_canceladas = f"{assinaturas_canceladas_data['total_assinaturas_canceladas']:,.0f}" if assinaturas_canceladas_data['total_assinaturas_canceladas'] else "0"
+                if crescimento_ano >= 0:
+                    badge_crescimento_ano = f"↑{crescimento_ano:.1f}%"
+                else:
+                    badge_crescimento_ano = f"↓{abs(crescimento_ano):.1f}%"
                 
-                mrr_anual = f"R$ {mrr_anual_data['mrr_anual']:,.2f}" if mrr_anual_data['mrr_anual'] else "R$ 0,00"
-                arr_anual = f"R$ {arr_anual_data['arr_anual']:,.2f}" if arr_anual_data['arr_anual'] else "R$ 0,00"
-                churn_rate = f"{churn_data['taxa_churn']:.1f}%" if churn_data['taxa_churn'] else "0,0%"
-                retention_rate = f"{retention_data['taxa_retencao']:.1f}%" if retention_data['taxa_retencao'] else "0,0%"
+                receita_bruta = f"Receita bruta de R$ {dashboard_metrics.get('receita_bruta', 0):,.2f}"
                 
-                assinaturas_mes_atual = f"{assinaturas_mes_atual_data['total_assinaturas_mes_atual']:,.0f}" if assinaturas_mes_atual_data['total_assinaturas_mes_atual'] else "0"
-                assinaturas_mes_passado = f"{assinaturas_mes_passado_data['total_assinaturas_mes_anterior']:,.0f}" if assinaturas_mes_passado_data['total_assinaturas_mes_anterior'] else "0"
+                logger.info("🎉 TODAS as métricas calculadas com sucesso!")
+                logger.info(f"   💰 Faturamento: {faturamento_total_formatted}")
+                logger.info(f"   📊 Vendas: {quantidade_vendas}")
+                logger.info(f"   👥 Alunos: {quantidade_alunos}")
+                logger.info(f"   💎 LTV: {ltv_geral_formatted}")
+                logger.info(f"   📈 Crescimento Mês: {badge_crescimento_mes}")
+                logger.info(f"   📈 Crescimento Ano: {badge_crescimento_ano}")
+                logger.info(f"   💵 Receita Bruta: {receita_bruta}")
                 
-                # Seção Principal
-                faturamento_total = f"R$ {receita_anual_data['receita_anual_total']:,.2f}" if receita_anual_data['receita_anual_total'] else "R$ 0,00"
-                quantidade_vendas = f"{total_vendas_data['total_vendas']:,.0f}" if total_vendas_data['total_vendas'] else "0"
-                quantidade_alunos = f"{clientes_unicos_data['total_clientes_unicos']:,.0f}" if clientes_unicos_data['total_clientes_unicos'] else "0"
-                ltv_geral = f"R$ {ltv_data['ltv_medio']:,.2f}" if ltv_data['ltv_medio'] else "R$ 0,00"
+                return (faturamento_total_formatted, quantidade_vendas, quantidade_alunos, 
+                       ltv_geral_formatted, badge_crescimento_mes, badge_crescimento_ano, receita_bruta)
                 
-                # Seção Performance
-                arpu = f"R$ {arpu_data['arpu']:,.2f}" if arpu_data['arpu'] else "R$ 0,00"
-                cac = f"R$ {cac_data['cac']:,.2f}" if cac_data['cac'] else "R$ 0,00"
-                roi = f"{roi_data['roi_percentual']:+.1f}%" if roi_data['roi_percentual'] else "0,0%"
-                margem_lucro = f"{margem_lucro_data['margem_lucro']:.1f}%" if margem_lucro_data['margem_lucro'] else "0,0%"
-                nps = f"{nps_data['nps_total']:+.0f}" if nps_data['nps_total'] else "0"
-                customer_health = f"{health_score_data['health_score_medio']:.0f}/100" if health_score_data['health_score_medio'] else "0/100"
-                conversion_rate = f"{conversion_data['taxa_conversao']:.1f}%" if conversion_data['taxa_conversao'] else "0,0%"
-                revenue_growth = f"{revenue_growth_data['growth_rate']:+.1f}%" if revenue_growth_data['growth_rate'] else "0,0%"
+            except Exception as e:
+                logger.error(f"❌ Erro ao calcular métricas: {str(e)}")
+                import traceback
+                logger.error(f"   Traceback: {traceback.format_exc()}")
                 
-                logger.info("✅ Valores formatados para exibição")
-                
-                # Retorna todos os valores atualizados
-                return [
-                    # Grid Final
-                    mrr_total, arr_total, mra_recorrencia, mrr_growth,
-                    mrr_mensal, arr_mensal, assinaturas_ativas, assinaturas_canceladas,
-                    mrr_anual, arr_anual, churn_rate, retention_rate,
-                    assinaturas_mes_atual, assinaturas_mes_passado,
-                    
-                    # Seção Principal
-                    faturamento_total, quantidade_vendas, quantidade_alunos, ltv_geral,
-                    
-                    # Seção Performance
-                    arpu, cac, roi, margem_lucro, nps, customer_health, conversion_rate, revenue_growth
-                ]
-                
-            except ImportError as e:
-                logger.error(f"❌ Erro de importação: {str(e)}")
                 # Retorna valores padrão em caso de erro
-                return ["R$ 0,00"] * 30  # 30 métricas com valores padrão
+                return ("R$ 0,00", "0", "0", "R$ 0,00", "↑0,0%", "↑0,0%", "Receita bruta de R$ 0,00")
                 
         except Exception as e:
-            logger.error(f"❌ Erro ao atualizar métricas: {str(e)}")
-            logger.error(f"🔍 Traceback: {traceback.format_exc()}")
+            logger.error(f"❌ Erro geral no callback: {str(e)}")
+            import traceback
+            logger.error(f"   Traceback: {traceback.format_exc()}")
             
             # Retorna valores padrão em caso de erro
-            return ["R$ 0,00"] * 30  # 30 métricas com valores padrão
-    
-    # ========================================================================
-    # CALLBACKS ESPECÍFICOS PARA COMPONENTES INDIVIDUAIS
-    # ========================================================================
-    
-    @app.callback(
-        Output('metrics-loading', 'children'),
-        Input('refresh-button', 'n_clicks'),
-        prevent_initial_call=True
-    )
-    def show_loading_state(refresh_clicks):
-        """Mostra estado de carregamento durante atualização"""
-        if refresh_clicks:
-            return "🔄 Atualizando métricas..."
-        return ""
-    
-    @app.callback(
-        Output('last-update', 'children'),
-        Input('refresh-button', 'n_clicks'),
-        prevent_initial_call=True
-    )
-    def update_last_update_timestamp(refresh_clicks):
-        """Atualiza timestamp da última atualização"""
-        if refresh_clicks:
-            return f"Última atualização: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
-        return ""
+            return ("R$ 0,00", "0", "0", "R$ 0,00", "↑0,0%", "↑0,0%", "Receita bruta de R$ 0,00")
     
     logger.info("✅ Callbacks de métricas registrados com sucesso")
 

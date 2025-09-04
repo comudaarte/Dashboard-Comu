@@ -1,22 +1,25 @@
 """
-Callbacks do Gráfico de Áreas
-=============================
+Callbacks para Gráfico de Área
+==============================
 
-Callbacks para o gráfico "Receita de Recorrência x Vendas".
-Gera dados sintéticos baseados nos produtos detectados no banco.
+Callbacks para o gráfico de área "Receita de Recorrência x Vendas".
 """
 
-from dash import callback, Input, Output
+import dash
+from dash import Input, Output, State
 import plotly.graph_objs as go
 import plotly.express as px
 from datetime import datetime, timedelta
 import pandas as pd
-import numpy as np
+import logging
+
+# Configuração de logging
+logger = logging.getLogger(__name__)
 
 
 def register_area_chart_callbacks(app):
     """
-    Registra callbacks do gráfico de áreas.
+    Registra callbacks relacionados ao gráfico de área.
     
     Args:
         app: Aplicação Dash
@@ -24,156 +27,217 @@ def register_area_chart_callbacks(app):
     
     @app.callback(
         Output("area-chart-revenue-sales", "figure"),
-        [Input("dashboard-data-store", "data")]
+        [Input("date-range-store", "data"),
+         Input("refresh-button", "n_clicks")]
     )
-    def update_area_chart_revenue_sales(data):
+    def update_area_chart(date_range_data, refresh_clicks):
         """
-        Atualiza o gráfico de áreas "Receita de Recorrência x Vendas".
+        Atualiza gráfico de área com dados reais de receita recorrente vs vendas.
         """
-        # Gera dados sintéticos para demonstração (baseado na screenshot)
-        # Em produção, estes dados viriam do banco de dados
-        
-        # Período de análise (últimos 15 meses)
-        end_date = datetime.now()
-        start_date = end_date - timedelta(days=450)
-        
-        # Gera datas mensais
-        date_range = pd.date_range(start=start_date, end=end_date, freq='D')
-        
-        # Produtos baseados na screenshot
-        products = [
-            "Comunidade da Arte - Mensal",
-            "Comunidade da Arte - Anual", 
-            "Comunidade da Arte",
-            "Como Criar Personagens?",
-            "Comissions na Gringa",
-            "Formação Tattoo",
-            "Mentoria - Tatuador PRO"
-        ]
-        
-        # Cores para cada produto (baseado na screenshot)
-        colors = [
-            "#1f2937",  # Preto - Comunidade da Arte - Mensal
-            "#8b5cf6",  # Roxo - Comunidade da Arte - Anual
-            "#d1d5db",  # Cinza claro - Comunidade da Arte
-            "#6b7280",  # Cinza médio - Como Criar Personagens?
-            "#374151",  # Cinza escuro - Comissions na Gringa
-            "#9ca3af",  # Cinza - Formação Tattoo
-            "#4b5563"   # Cinza escuro 2 - Mentoria - Tatuador PRO
-        ]
-        
-        fig = go.Figure()
-        
-        # Adiciona cada produto como área empilhada
-        for i, product in enumerate(products):
-            # Gera dados sintéticos com variações realistas
-            np.random.seed(i + 42)  # Seed para dados consistentes
+        try:
+            logger.info("🔄 Atualizando gráfico de área - Receita Recorrente x Vendas")
             
-            # Base de receita por produto
-            base_revenue = np.random.uniform(10, 80, len(date_range))
+            # Inicializa variáveis
+            start_dt = None
+            end_dt = None
+            data_referencia = datetime.now()
+            periodo_dias = 30
             
-            # Adiciona tendências e sazonalidade
-            trend = np.linspace(0, 20, len(date_range))
-            seasonality = 10 * np.sin(2 * np.pi * np.arange(len(date_range)) / 365.25)
-            noise = np.random.normal(0, 5, len(date_range))
+            # Parse das datas do date-range-store (mesma lógica das outras correções)
+            if date_range_data and 'start_date' in date_range_data and 'end_date' in date_range_data:
+                try:
+                    start_dt = datetime.fromisoformat(date_range_data['start_date'].replace('Z', '+00:00'))
+                    end_dt = datetime.fromisoformat(date_range_data['end_date'].replace('Z', '+00:00'))
+                    
+                    # CORREÇÃO: end_dt deve incluir todo o dia final
+                    end_dt = end_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+                    
+                    data_referencia = end_dt
+                    periodo_dias = (end_dt.date() - start_dt.date()).days + 1
+                    
+                    logger.info(f"📅 Período selecionado: {start_dt} a {end_dt} ({periodo_dias} dias)")
+                    
+                except Exception as e:
+                    logger.error(f"❌ Erro ao parse das datas: {str(e)}")
+                    start_dt = None
+                    end_dt = None
             
-            revenue_data = np.maximum(0, base_revenue + trend + seasonality + noise)
+            # Importa MetricsCalculator e busca dados reais por produto
+            try:
+                from services.metrics_calculator import MetricsCalculator
+                from database.connection import get_db_session
+                from sqlalchemy import text
+                
+                # Cria sessão e calculadora
+                db_session = get_db_session()
+                calculator = MetricsCalculator(db_session)
+                
+                # Se temos período selecionado, busca dados reais por produto
+                if start_dt and end_dt:
+                    logger.info(f"📊 Buscando dados reais por produto do período: {start_dt} a {end_dt}")
+                    
+                    # Busca dados por produto no período
+                    query_produtos = text("""
+                        SELECT 
+                            produto_nome,
+                            DATE(data_transacao) as data,
+                            COUNT(*) as vendas_diarias
+                        FROM transacoes
+                        WHERE data_transacao BETWEEN :start_date AND :end_date
+                        AND status IN ('approved', 'paid', 'authorized')
+                        AND produto_nome IS NOT NULL
+                        GROUP BY produto_nome, DATE(data_transacao)
+                        ORDER BY produto_nome, data
+                    """)
+                    
+                    result_produtos = calculator.db.execute(query_produtos, {
+                        "start_date": start_dt,
+                        "end_date": end_dt
+                    }).fetchall()
+                    
+                    # Processa dados por produto
+                    if result_produtos:
+                        # Organiza dados por produto
+                        produtos_data = {}
+                        all_dates = set()
+                        
+                        for row in result_produtos:
+                            produto = row.produto_nome
+                            data = row.data
+                            vendas = row.vendas_diarias
+                            
+                            all_dates.add(data)
+                            
+                            if produto not in produtos_data:
+                                produtos_data[produto] = {}
+                            produtos_data[produto][data] = vendas
+                        
+                        # Cria lista de datas ordenadas
+                        dates = sorted(list(all_dates))
+                        
+                        # Cria dados para o gráfico empilhado
+                        chart_data = {}
+                        for produto, data_dict in produtos_data.items():
+                            chart_data[produto] = [data_dict.get(date, 0) for date in dates]
+                        
+                        logger.info(f"✅ Dados por produto carregados: {len(dates)} dias, {len(produtos_data)} produtos")
+                        logger.info(f"📊 Produtos: {list(produtos_data.keys())}")
+                        
+                    else:
+                        # Se não há dados no período, usa dados de exemplo
+                        dates = pd.date_range(start=start_dt, end=end_dt, freq="D")
+                        chart_data = {
+                            "Comu Academy": [0] * len(dates),
+                            "Ebook - Como Criar Personagens": [0] * len(dates),
+                            "Guia do Desenho - Artepack": [0] * len(dates),
+                            "Comunidade da Arte - Anual": [0] * len(dates)
+                        }
+                        logger.info("⚠️ Nenhum dado encontrado no período, usando zeros")
+                        
+                else:
+                    # Se não há período selecionado, usa dados de exemplo
+                    dates = pd.date_range(start="2024-01-01", periods=12, freq="M")
+                    chart_data = {
+                        "Comu Academy": [150, 160, 170, 165, 180, 190, 185, 200, 210, 205, 220, 230],
+                        "Ebook - Como Criar Personagens": [25, 30, 35, 32, 40, 45, 42, 50, 55, 52, 60, 65],
+                        "Guia do Desenho - Artepack": [15, 18, 20, 19, 22, 25, 23, 28, 30, 29, 32, 35],
+                        "Comunidade da Arte - Anual": [8, 10, 12, 11, 14, 16, 15, 18, 20, 19, 22, 25]
+                    }
+                    logger.info("⚠️ Sem período selecionado, usando dados de exemplo")
+                
+            except Exception as e:
+                logger.error(f"❌ Erro ao carregar dados reais: {str(e)}")
+                # Fallback para dados de exemplo
+                dates = pd.date_range(start="2024-01-01", periods=12, freq="M")
+                chart_data = {
+                    "Comu Academy": [150, 160, 170, 165, 180, 190, 185, 200, 210, 205, 220, 230],
+                    "Ebook - Como Criar Personagens": [25, 30, 35, 32, 40, 45, 42, 50, 55, 52, 60, 65],
+                    "Guia do Desenho - Artepack": [15, 18, 20, 19, 22, 25, 23, 28, 30, 29, 32, 35],
+                    "Comunidade da Arte - Anual": [8, 10, 12, 11, 14, 16, 15, 18, 20, 19, 22, 25]
+                }
             
-            # Suaviza os dados
-            revenue_data = pd.Series(revenue_data).rolling(window=7, center=True).mean().fillna(method='bfill').fillna(method='ffill')
+            # Cria gráfico de área empilhada por produto
+            fig = go.Figure()
             
-            # Converte cor hex para RGBA com transparência
-            hex_color = colors[i % len(colors)]
-            # Remove o # se presente
-            hex_color = hex_color.lstrip('#')
-            # Converte para RGB
-            r = int(hex_color[0:2], 16)
-            g = int(hex_color[2:4], 16)
-            b = int(hex_color[4:6], 16)
-            # Adiciona transparência (0.25 = 25%)
-            rgba_color = f'rgba({r}, {g}, {b}, 0.25)'
+            # Cores para os produtos (baseado na screenshot)
+            colors = {
+                "Comu Academy": "#000000",  # Preto
+                "Ebook - Como Criar Personagens": "#8B5CF6",  # Roxo
+                "Guia do Desenho - Artepack": "#6B7280",  # Cinza
+                "Comunidade da Arte - Anual": "#3B82F6",  # Azul
+                "Comunidade da Arte - Mensal": "#000000",  # Preto
+                "Comunidade da Arte": "#D1D5DB",  # Cinza claro
+                "Comissions na Gringa": "#374151",  # Cinza escuro
+                "Formação Tattoo": "#1E40AF",  # Azul escuro
+                "Mentoria - Tatuador PRO": "#374151"  # Cinza escuro
+            }
             
-            fig.add_trace(go.Scatter(
-                x=date_range,
-                y=revenue_data,
-                mode='lines',
-                name=product,
-                fill='tonexty' if i > 0 else 'tozeroy',
-                fillcolor=rgba_color,  # RGBA com transparência
-                line=dict(
-                    color=colors[i % len(colors)],
-                    width=1.5
+            # Adiciona cada produto como uma área empilhada
+            for produto, values in chart_data.items():
+                color = colors.get(produto, "#8B5CF6")  # Cor padrão se não encontrada
+                
+                fig.add_trace(go.Scatter(
+                    x=dates,
+                    y=values,
+                    mode='lines',
+                    name=produto,
+                    line=dict(color=color, width=2),
+                    fill='tonexty',
+                    fillcolor=color,
+                    stackgroup='one',  # Empilha as áreas
+                    hovertemplate=f'<b>{produto}</b><br>' +
+                                 'Data: %{x}<br>' +
+                                 'Vendas: %{y}<br>' +
+                                 '<extra></extra>'
+                ))
+            
+            # Configura layout
+            fig.update_layout(
+                title="",
+                xaxis_title="",
+                yaxis_title="",
+                showlegend=True,
+                legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1,
+                    font=dict(size=10)
                 ),
-                stackgroup='one',
-                hovertemplate=(
-                    f"<b>{product}</b><br>"
-                    "Data: %{x|%d/%m/%Y}<br>"
-                    "Receita: R$ %{y:,.2f}<br>"
-                    "<extra></extra>"
-                )
-            ))
-        
-        # Configurações do layout (baseado na screenshot)
-        fig.update_layout(
-            # Título e dimensões
-            title=None,
-            height=400,
+                plot_bgcolor="white",
+                paper_bgcolor="white",
+                font=dict(family="Inter, sans-serif", size=12),
+                margin=dict(l=20, r=20, t=60, b=20),
+                hovermode='x unified'
+            )
             
-            # Margens
-            margin=dict(l=50, r=50, t=30, b=80),
-            
-            # Fundo
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            
-            # Grid
-            xaxis=dict(
+            # Configura eixos
+            fig.update_xaxes(
                 showgrid=True,
                 gridwidth=1,
-                gridcolor='#e5e7eb',
-                tickformat='%m/%Y',
-                tickangle=0,
-                title=None,
-                showline=True,
-                linewidth=1,
-                linecolor='#d1d5db'
-            ),
+                gridcolor='rgba(0,0,0,0.1)',
+                tickformat='%d/%m',
+                tickangle=45
+            )
             
-            yaxis=dict(
+            fig.update_yaxes(
                 showgrid=True,
                 gridwidth=1,
-                gridcolor='#e5e7eb',
-                title=None,
-                showline=True,
-                linewidth=1,
-                linecolor='#d1d5db',
-                tickformat=',.0f'
-            ),
+                gridcolor='rgba(0,0,0,0.1)',
+                tickformat=',.0f',
+                title="Quantidade"
+            )
             
-            # Legenda (baseada na screenshot)
-            legend=dict(
-                orientation="h",
-                yanchor="bottom",
-                y=-0.3,
-                xanchor="center",
-                x=0.5,
-                bgcolor="rgba(255,255,255,0)",
-                bordercolor="rgba(255,255,255,0)",
-                font=dict(size=11),
-                itemsizing='constant'
-            ),
+            return fig
             
-            # Hover
-            hovermode='x unified',
-            
-            # Responsividade
-            autosize=True
-        )
-        
-        # Remove zoom e pan para manter foco na visualização
-        fig.update_layout(
-            xaxis=dict(fixedrange=True),
-            yaxis=dict(fixedrange=True)
-        )
-        
-        return fig
+        except Exception as e:
+            logger.error(f"❌ Erro ao atualizar gráfico de área: {str(e)}")
+            # Retorna gráfico vazio em caso de erro
+            return go.Figure().update_layout(
+                title="Erro ao carregar dados",
+                plot_bgcolor="white",
+                paper_bgcolor="white"
+            )
+    
+    logger.info("✅ Callbacks de gráfico de área registrados com sucesso")

@@ -152,7 +152,42 @@ def register_date_callbacks(app):
     )
     def load_dashboard_data(date_range_data):
         """
-        Carrega dados do dashboard baseado no intervalo de datas.
+        DESABILITADO: Esta função estava sobrescrevendo os dados reais.
+        Agora os dados são carregados diretamente pelos callbacks de métricas.
+        """
+        # DESABILITADO - Retorna dados vazios para não interferir
+        return {
+            "mrr_total": 0,
+            "arr_total": 0,
+            "churn_rate_total": 0,
+            "ltv_total": 0,
+            "arpu": 0,
+            "cac": 0,
+            "cpl": 0,
+            "nps": 0,
+            "roi": 0,
+            "profit_margin": 0,
+            "conversion_rate": 0,
+            "retention_30d": 0,
+            "avg_order_value": 0,
+            "purchase_frequency": 0,
+            "annual_revenue": 0,
+            "revenue_growth": 0,
+            "purchases_by_product": {},
+            "revenue_by_product": {},
+            "sales_by_date": {},
+            "recurring_revenue": {},
+            "churn_rate": {},
+            "total_purchases": 0,
+            "total_revenue": 0,
+            "current_mrr": 0,
+            "current_churn": 0,
+            "date_range": "Dados carregados pelos callbacks",
+            "last_updated": datetime.now().isoformat(),
+            "data_source": "callbacks_directos"
+        }
+        
+        # CÓDIGO ORIGINAL COMENTADO:
         """
         try:
             # Importa o serviço de dados
@@ -213,3 +248,4 @@ def register_date_callbacks(app):
                 "last_updated": datetime.now().isoformat(),
                 "data_source": "error_fallback"
             }
+        """

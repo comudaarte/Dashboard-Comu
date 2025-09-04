@@ -25,7 +25,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("MRR - (TOTAL)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="mrr-total", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -35,7 +35,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("ARR - (TOTAL)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="arr-total", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -45,7 +45,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Recorrência - MRA (Monthly Recurrence Average)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("50 499", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("50 499", id="mra", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -55,7 +55,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("MRR - Growth (%)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("50 499", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("50 499", id="mrr-growth", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3")
@@ -68,7 +68,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("MRR - (Plano Mensal)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="mrr-mensal", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -78,7 +78,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("ARR - (Plano Mensal)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="arr-mensal", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -88,7 +88,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Assinaturas Ativas", className="text-white mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("73", className="fw-bold text-white mb-0", style={"fontSize": "2rem", "textAlign": "center"})
+                        html.H4("73", id="assinaturas-ativas", className="fw-bold text-white mb-0", style={"fontSize": "2rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#8B5CF6"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -98,7 +98,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Assinaturas Canceladas", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("73", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("73", id="assinaturas-canceladas", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3")
@@ -111,7 +111,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("MRR - (Plano Anual)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="mrr-anual", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -121,7 +121,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("ARR - (Plano Anual)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("R$ 556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("R$ 556 330,48", id="arr-anual", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -131,7 +131,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Churn Rate (%)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("556 330,48", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("556 330,48", id="churn-rate", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3"),
@@ -141,7 +141,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Retention Rate (%)", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("73", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                        html.H4("73", id="retention-rate", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                     ], className="p-3")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa"})
             ], width=12, md=6, lg=3, className="mb-3")
@@ -154,7 +154,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Assinaturas esse mês", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("73", className="fw-bold text-dark mb-0", style={"fontSize": "2rem", "textAlign": "center"})
+                        html.H4("73", id="assinaturas-mes-atual", className="fw-bold text-dark mb-0", style={"fontSize": "2rem", "textAlign": "center"})
                     ], className="p-4")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa", "minHeight": "120px"})
             ], width=12, md=6, className="mb-3"),
@@ -164,7 +164,7 @@ def create_final_metrics_grid():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Assinaturas do Mês Passado", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H4("73", className="fw-bold text-dark mb-0", style={"fontSize": "2rem", "textAlign": "center"})
+                        html.H4("73", id="assinaturas-mes-passado", className="fw-bold text-dark mb-0", style={"fontSize": "2rem", "textAlign": "center"})
                     ], className="p-4")
                 ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "backgroundColor": "#f8f9fa", "minHeight": "120px"})
             ], width=12, md=6, className="mb-3")

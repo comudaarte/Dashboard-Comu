@@ -35,7 +35,7 @@ def create_performance_metrics_section():
                     dbc.Card([
                         dbc.CardBody([
                             html.H6("ARPU", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                            html.H4("1 223", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                            html.H4("1 223", id="arpu-value", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                         ], className="p-3")
                     ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "minHeight": "80px"})
                 ], width=6, md=4, lg=2, className="mb-3"),
@@ -45,7 +45,7 @@ def create_performance_metrics_section():
                     dbc.Card([
                         dbc.CardBody([
                             html.H6("CAC Geral", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                            html.H4("1 223", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                            html.H4("1 223", id="cac-geral-value", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                         ], className="p-3")
                     ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "minHeight": "80px"})
                 ], width=6, md=4, lg=2, className="mb-3"),
@@ -55,7 +55,7 @@ def create_performance_metrics_section():
                     dbc.Card([
                         dbc.CardBody([
                             html.H6("CPL Geral", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                            html.H4("1 223", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                            html.H4("1 223", id="cpl-geral-value", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                         ], className="p-3")
                     ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "minHeight": "80px"})
                 ], width=6, md=4, lg=2, className="mb-3"),
@@ -65,7 +65,7 @@ def create_performance_metrics_section():
                     dbc.Card([
                         dbc.CardBody([
                             html.H6("NPS Geral", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                            html.H4("1 223", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                            html.H4("1 223", id="nps-geral-value", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                         ], className="p-3")
                     ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "minHeight": "80px"})
                 ], width=6, md=4, lg=2, className="mb-3"),
@@ -75,7 +75,7 @@ def create_performance_metrics_section():
                     dbc.Card([
                         dbc.CardBody([
                             html.H6("Receita média mensal", className="text-muted mb-2", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                            html.H4("1 223", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
+                            html.H4("1 223", id="receita-media-mensal-value", className="fw-bold text-dark mb-0", style={"fontSize": "1.5rem", "textAlign": "center"})
                         ], className="p-3")
                     ], className="h-100 border-0 shadow-sm", style={"borderRadius": "12px", "minHeight": "80px"})
                 ], width=6, md=4, lg=2, className="mb-3")
@@ -89,12 +89,12 @@ def create_performance_metrics_section():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Receita Anual da Empresa", className="text-muted mb-3", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H3("R$ 1 223,00", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
+                        html.H3("R$ 1 223,00", id="receita-anual-value", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
                         # Badge de crescimento
                         html.Div([
-                            html.Span([
+                            html.Span(id="receita-anual-badge", children=[
                                 html.I(className="fas fa-arrow-up me-1", style={"fontSize": "0.75rem", "color": "white"}), 
-                                "7,9%"
+                                "0%"
                             ], 
                             className="badge", 
                             style={
@@ -115,12 +115,12 @@ def create_performance_metrics_section():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("ROI Geral", className="text-muted mb-3", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H3("122 300,00%", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
+                        html.H3("122 300,00%", id="roi-geral-value", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
                         # Badge de crescimento
                         html.Div([
-                            html.Span([
+                            html.Span(id="roi-geral-badge", children=[
                                 html.I(className="fas fa-arrow-up me-1", style={"fontSize": "0.75rem", "color": "white"}), 
-                                "7,9%"
+                                "0%"
                             ], 
                             className="badge", 
                             style={
@@ -141,12 +141,12 @@ def create_performance_metrics_section():
                 dbc.Card([
                     dbc.CardBody([
                         html.H6("Margem de Lucro", className="text-muted mb-3", style={"fontSize": "0.875rem", "fontWeight": "400", "textAlign": "center"}),
-                        html.H3("122 300,00%", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
+                        html.H3("122 300,00%", id="margem-lucro-value", className="fw-bold text-dark mb-3", style={"fontSize": "2rem", "textAlign": "center"}),
                         # Badge de crescimento
                         html.Div([
-                            html.Span([
+                            html.Span(id="margem-lucro-badge", children=[
                                 html.I(className="fas fa-arrow-up me-1", style={"fontSize": "0.75rem", "color": "white"}), 
-                                "7,9%"
+                                "0%"
                             ], 
                             className="badge", 
                             style={

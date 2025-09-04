@@ -45,20 +45,17 @@ def create_main_metrics_section():
                                                 "fontSize": "0.75rem",
                                                 "color": "#6b7280"
                                             }),
-                                            html.Span([
-                                                html.I(className="fas fa-arrow-up me-1", style={
+                                            html.Span(
+                                                html.Span(id="badge-crescimento-mes", children="0,0%"),
+                                                className="badge", style={
+                                                    "backgroundColor": "#8B5CF6",
+                                                    "color": "white",
                                                     "fontSize": "0.75rem",
-                                                    "color": "white"
-                                                }),
-                                                "7,9%"
-                                            ], className="badge", style={
-                                                "backgroundColor": "#8B5CF6",
-                                                "color": "white",
-                                                "fontSize": "0.75rem",
-                                                "fontWeight": "500",
-                                                "padding": "4px 8px",
-                                                "borderRadius": "12px"
-                                            })
+                                                    "fontWeight": "500",
+                                                    "padding": "4px 8px",
+                                                    "borderRadius": "12px"
+                                                }
+                                            )
                                         ], className="d-flex align-items-center me-3"),
                                         
                                         # Badge "Esse Ano"
@@ -67,34 +64,31 @@ def create_main_metrics_section():
                                                 "fontSize": "0.75rem",
                                                 "color": "#6b7280"
                                             }),
-                                            html.Span([
-                                                html.I(className="fas fa-arrow-up me-1", style={
+                                            html.Span(
+                                                html.Span(id="badge-crescimento-ano", children="0,0%"),
+                                                className="badge", style={
+                                                    "backgroundColor": "#8B5CF6",
+                                                    "color": "white",
                                                     "fontSize": "0.75rem",
-                                                    "color": "white"
-                                                }),
-                                                "7,9%"
-                                            ], className="badge", style={
-                                                "backgroundColor": "#8B5CF6",
-                                                "color": "white",
-                                                "fontSize": "0.75rem",
-                                                "fontWeight": "500",
-                                                "padding": "4px 8px",
-                                                "borderRadius": "12px"
-                                            })
+                                                    "fontWeight": "500",
+                                                    "padding": "4px 8px",
+                                                    "borderRadius": "12px"
+                                                }
+                                            )
                                         ], className="d-flex align-items-center")
                                     ], className="d-flex align-items-center")
                                 ], className="d-flex justify-content-between align-items-center mb-2"),
                                 
                                 # Valor principal
                                 html.H1(
-                                    "R$ 514.396,77",
+                                    html.Span(id="faturamento-total", children="R$ 0,00"),
                                     className="fw-bold text-dark mb-1",
                                     style={"fontSize": "2.5rem", "lineHeight": "1.2"}
                                 ),
                                 
                                 # Subtítulo
                                 html.P(
-                                    "Receita bruta de R$1.000.000,00",
+                                    html.Span(id="receita-bruta", children="Receita bruta de R$ 0,00"),
                                     className="text-muted mb-0",
                                     style={"fontSize": "0.875rem"}
                                 )
@@ -116,7 +110,7 @@ def create_main_metrics_section():
                                     style={"fontSize": "0.875rem", "fontWeight": "400"}
                                 ),
                                 html.H3(
-                                    "4.161",
+                                    html.Span(id="quantidade-vendas", children="0"),
                                     className="fw-bold text-dark mb-0",
                                     style={"fontSize": "2rem"}
                                 )
@@ -138,7 +132,7 @@ def create_main_metrics_section():
                                             style={"fontSize": "0.75rem", "fontWeight": "400"}
                                         ),
                                         html.H4(
-                                            "4.161",
+                                            html.Span(id="quantidade-alunos", children="0"),
                                             className="fw-bold text-dark mb-0",
                                             style={"fontSize": "1.25rem"}
                                         )
@@ -160,7 +154,7 @@ def create_main_metrics_section():
                                             style={"fontSize": "0.75rem", "fontWeight": "400"}
                                         ),
                                         html.H4(
-                                            "4.161",
+                                            html.Span(id="ltv-geral", children="R$ 0,00"),
                                             className="fw-bold text-dark mb-0",
                                             style={"fontSize": "1.25rem"}
                                         )
@@ -215,20 +209,17 @@ def create_main_metrics_section_with_data(revenue_data, sales_data, students_dat
                                         "fontSize": "0.75rem",
                                         "color": "#6b7280"
                                     }),
-                                    html.Span([
-                                        html.I(className="fas fa-arrow-up me-1", style={
+                                    html.Span(
+                                        html.Span(id="badge-crescimento-mes", children="0,0%"),
+                                        className="badge", style={
+                                            "backgroundColor": "#8B5CF6",
+                                            "color": "white",
                                             "fontSize": "0.75rem",
-                                            "color": "white"
-                                        }),
-                                        f"{revenue_data.get('growth_month', 7.9):.1f}%"
-                                    ], className="badge", style={
-                                        "backgroundColor": "#8B5CF6",
-                                        "color": "white",
-                                        "fontSize": "0.75rem",
-                                        "fontWeight": "500",
-                                        "padding": "4px 8px",
-                                        "borderRadius": "12px"
-                                    })
+                                            "fontWeight": "500",
+                                            "padding": "4px 8px",
+                                            "borderRadius": "12px"
+                                        }
+                                    )
                                 ], className="d-flex align-items-center me-3"),
                                 
                                 # Badge "Esse Ano"
@@ -237,20 +228,17 @@ def create_main_metrics_section_with_data(revenue_data, sales_data, students_dat
                                         "fontSize": "0.75rem",
                                         "color": "#6b7280"
                                     }),
-                                    html.Span([
-                                        html.I(className="fas fa-arrow-up me-1", style={
+                                    html.Span(
+                                        html.Span(id="badge-crescimento-ano", children="0,0%"),
+                                        className="badge", style={
+                                            "backgroundColor": "#8B5CF6",
+                                            "color": "white",
                                             "fontSize": "0.75rem",
-                                            "color": "white"
-                                        }),
-                                        f"{revenue_data.get('growth_year', 7.9):.1f}%"
-                                    ], className="badge", style={
-                                        "backgroundColor": "#8B5CF6",
-                                        "color": "white",
-                                        "fontSize": "0.75rem",
-                                        "fontWeight": "500",
-                                        "padding": "4px 8px",
-                                        "borderRadius": "12px"
-                                    })
+                                            "fontWeight": "500",
+                                            "padding": "4px 8px",
+                                            "borderRadius": "12px"
+                                        }
+                                    )
                                 ], className="d-flex align-items-center")
                             ], className="d-flex align-items-center")
                         ], className="d-flex justify-content-between align-items-center mb-2"),

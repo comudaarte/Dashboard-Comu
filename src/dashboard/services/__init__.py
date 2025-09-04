@@ -5,8 +5,9 @@ Serviços do Dashboard
 Módulo responsável pelos serviços de integração do dashboard.
 """
 
-from .dashboard_data_service import DashboardDataService
+# DESABILITADO: DashboardDataService estava sobrescrevendo dados reais
+# from .dashboard_data_service import DashboardDataService
 
 __all__ = [
-    "DashboardDataService"
+    # "DashboardDataService"  # DESABILITADO
 ]

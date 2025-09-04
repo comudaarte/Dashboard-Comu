@@ -427,7 +427,11 @@ class MetricsCalculator:
                 if churn_total > 0:
                     ltv_total = ticket_medio_geral / (churn_total / 100)
                 else:
-                    ltv_total = ticket_medio_geral / 0.01
+                    # CORREÇÃO: Se não há churn no período, usa o ticket médio como LTV
+                    # (assumindo que o cliente ficará ativo por pelo menos 1 ano)
+                    ltv_total = ticket_medio_geral
+                    
+                self.logger.info(f"LTV calculado: ticket_medio={ticket_medio_geral:.2f}, churn_rate={churn_total:.2f}%, ltv={ltv_total:.2f}")
             else:
                 ltv_total = 0
                 ticket_medio_geral = 0
@@ -530,12 +534,14 @@ class MetricsCalculator:
     # FASE 1: MÉTRICAS BÁSICAS - IMPLEMENTAÇÃO
     # ============================================================================
     
-    def calculate_active_subscriptions(self, data_referencia: datetime = None) -> Dict[str, Any]:
+    def calculate_active_subscriptions(self, data_referencia: datetime = None, start_date: datetime = None, end_date: datetime = None) -> Dict[str, Any]:
         """
-        Calcula total de assinaturas ativas.
+        Calcula total de assinaturas ativas para um período específico.
         
         Args:
             data_referencia: Data de referência para cálculos (padrão: hoje)
+            start_date: Data de início do período (opcional)
+            end_date: Data de fim do período (opcional)
             
         Returns:
             Dict com total de assinaturas ativas e breakdown por plataforma
@@ -543,28 +549,55 @@ class MetricsCalculator:
         if data_referencia is None:
             data_referencia = datetime.now()
             
-        self.logger.info(f"Calculando assinaturas ativas para data: {data_referencia}")
+        self.logger.info(f"Calculando assinaturas ativas para período: {start_date} a {end_date}")
         
         try:
-            query = text("""
-                SELECT 
-                    plataforma,
-                    COUNT(*) as total_ativas
-                FROM assinaturas 
-                WHERE 
-                    data_expiracao_acesso >= :data_ref
-                    AND status NOT IN ('refunded', 'chargeback')
-                    AND (valor_mensal IS NOT NULL OR valor_anual IS NOT NULL)
-                GROUP BY plataforma
-                ORDER BY plataforma
-            """)
-            
-            result = self.db.execute(query, {"data_ref": data_referencia}).fetchall()
+            # Se temos período específico, filtra por data_transacao na tabela transacoes
+            if start_date and end_date:
+                query = text("""
+                    SELECT 
+                        plataforma,
+                        COUNT(*) as total_ativas
+                    FROM transacoes 
+                    WHERE 
+                        data_transacao >= :start_date
+                        AND data_transacao <= :end_date
+                        AND status IN ('approved', 'paid', 'authorized')
+                        AND valor > 0
+                    GROUP BY plataforma
+                    ORDER BY plataforma
+                """)
+                
+                result = self.db.execute(query, {
+                    "start_date": start_date,
+                    "end_date": end_date
+                }).fetchall()
+                
+                self.logger.info(f"Filtrando VENDAS por período (data_transacao): {start_date.date()} a {end_date.date()}")
+            else:
+                # Comportamento original: apenas data de referência
+                query = text("""
+                    SELECT 
+                        plataforma,
+                        COUNT(*) as total_ativas
+                    FROM assinaturas 
+                    WHERE 
+                        data_expiracao_acesso >= :data_ref
+                        AND status NOT IN ('refunded', 'chargeback')
+                        AND (valor_mensal IS NOT NULL OR valor_anual IS NOT NULL)
+                    GROUP BY plataforma
+                    ORDER BY plataforma
+                """)
+                
+                result = self.db.execute(query, {"data_ref": data_referencia}).fetchall()
+                self.logger.info(f"Filtrando assinaturas por data de referência: {data_referencia.date()}")
             
             total_ativas = sum(row.total_ativas for row in result)
             
             detalhes = {
                 "data_referencia": data_referencia.isoformat(),
+                "start_date": start_date.isoformat() if start_date else None,
+                "end_date": end_date.isoformat() if end_date else None,
                 "total_assinaturas_ativas": total_ativas,
                 "breakdown_por_plataforma": {}
             }
@@ -2370,3 +2403,559 @@ class MetricsCalculator:
         except Exception as e:
             self.logger.error(f"Erro ao calcular assinaturas do mês anterior: {str(e)}")
             raise
+
+    def calculate_dashboard_metrics_for_period(self, start_date: datetime, end_date: datetime) -> Dict[str, Any]:
+        """
+        Calcula métricas específicas do dashboard para um período definido.
+        
+        Implementa as regras específicas:
+        - Faturamento Total: Soma valor_bruto de transações aprovadas no período
+        - Quantidade de Vendas: Conta transações aprovadas no período  
+        - Quantidade de Alunos: Conta assinaturas criadas no período
+        - LTV Geral: Calcula LTV usando dados do período
+        
+        Args:
+            start_date: Data inicial do período
+            end_date: Data final do período
+            
+        Returns:
+            Dict com todas as métricas do dashboard
+        """
+        self.logger.info(f"Calculando métricas do dashboard para período: {start_date} a {end_date}")
+        
+        try:
+            # 1. FATURAMENTO TOTAL - Soma valor_liquido de transações aprovadas
+            query_faturamento = text("""
+                SELECT COALESCE(SUM(valor_liquido), 0) as faturamento_total
+                FROM transacoes 
+                WHERE data_transacao BETWEEN :start_date AND :end_date
+                AND status IN ('approved', 'paid', 'authorized')
+                AND valor_liquido > 0
+            """)
+            
+            self.logger.info(f"🔍 Executando query faturamento: {start_date} a {end_date}")
+            result_faturamento = self.db.execute(query_faturamento, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchone()
+            
+            faturamento_total = float(result_faturamento.faturamento_total) if result_faturamento.faturamento_total else 0
+            self.logger.info(f"🔍 Resultado faturamento: {result_faturamento.faturamento_total} -> {faturamento_total}")
+            
+            # 2. QUANTIDADE DE VENDAS - Conta transações aprovadas
+            query_vendas = text("""
+                SELECT COUNT(*) as total_vendas
+                FROM transacoes 
+                WHERE data_transacao BETWEEN :start_date AND :end_date
+                AND status IN ('approved', 'paid', 'authorized')
+                AND valor_bruto > 0
+            """)
+            
+            self.logger.info(f"🔍 Executando query vendas: {start_date} a {end_date}")
+            result_vendas = self.db.execute(query_vendas, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchone()
+            
+            total_vendas = int(result_vendas.total_vendas) if result_vendas.total_vendas else 0
+            self.logger.info(f"🔍 Resultado vendas: {result_vendas.total_vendas} -> {total_vendas}")
+            
+            # 3. QUANTIDADE DE ALUNOS - Conta apenas assinaturas com transações aprovadas
+            query_alunos = text("""
+                SELECT COUNT(DISTINCT a.id) as total_alunos
+                FROM assinaturas a
+                INNER JOIN transacoes t ON a.id = t.assinatura_id
+                WHERE a.data_inicio BETWEEN :start_date AND :end_date
+                AND a.status NOT IN ('refunded', 'chargeback')
+                AND t.status IN ('approved', 'paid', 'authorized')
+                AND t.valor_bruto > 0
+            """)
+            
+            self.logger.info(f"🔍 Executando query alunos: {start_date} a {end_date}")
+            result_alunos = self.db.execute(query_alunos, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchone()
+            
+            total_alunos = int(result_alunos.total_alunos) if result_alunos.total_alunos else 0
+            self.logger.info(f"🔍 Resultado alunos: {result_alunos.total_alunos} -> {total_alunos}")
+            
+            # DEBUG: Vamos verificar se há dados no banco para este período
+            self.logger.info("🔍 VERIFICANDO DADOS NO BANCO:")
+            
+            # Verifica transações no período
+            query_debug_transacoes = text("""
+                SELECT COUNT(*) as total, MIN(data_transacao) as min_data, MAX(data_transacao) as max_data
+                FROM transacoes 
+                WHERE data_transacao BETWEEN :start_date AND :end_date
+            """)
+            
+            result_debug_transacoes = self.db.execute(query_debug_transacoes, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchone()
+            
+            self.logger.info(f"🔍 Transações no período: {result_debug_transacoes.total} (min: {result_debug_transacoes.min_data}, max: {result_debug_transacoes.max_data})")
+            
+            # Verifica assinaturas no período
+            query_debug_assinaturas = text("""
+                SELECT COUNT(*) as total, MIN(data_inicio) as min_data, MAX(data_inicio) as max_data
+                FROM assinaturas 
+                WHERE data_inicio BETWEEN :start_date AND :end_date
+            """)
+            
+            result_debug_assinaturas = self.db.execute(query_debug_assinaturas, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchone()
+            
+            self.logger.info(f"🔍 Assinaturas no período: {result_debug_assinaturas.total} (min: {result_debug_assinaturas.min_data}, max: {result_debug_assinaturas.max_data})")
+            
+            # SE NÃO HOUVER DADOS, EXECUTA DIAGNÓSTICO COMPLETO
+            if result_debug_transacoes.total == 0 and result_debug_assinaturas.total == 0:
+                self.logger.warning("⚠️ NENHUM DADO ENCONTRADO NO PERÍODO! Executando diagnóstico completo...")
+                self.diagnose_database_dates()
+                
+                # Sugere períodos alternativos
+                self.logger.info("💡 SUGESTÕES DE PERÍODOS ALTERNATIVOS:")
+                
+                # Verifica últimos 7 dias
+                query_7dias = text("""
+                    SELECT COUNT(*) as total
+                    FROM transacoes 
+                    WHERE data_transacao >= NOW() - INTERVAL '7 days'
+                    AND status IN ('approved', 'paid', 'authorized')
+                """)
+                
+                result_7dias = self.db.execute(query_7dias).fetchone()
+                self.logger.info(f"   Últimos 7 dias: {result_7dias.total} transações")
+                
+                # Verifica último mês
+                query_30dias = text("""
+                    SELECT COUNT(*) as total
+                    FROM transacoes 
+                    WHERE data_transacao >= NOW() - INTERVAL '30 days'
+                    AND status IN ('approved', 'paid', 'authorized')
+                """)
+                
+                result_30dias = self.db.execute(query_30dias).fetchone()
+                self.logger.info(f"   Últimos 30 dias: {result_30dias.total} transações")
+            
+            # 4. LTV GERAL - Calcula usando dados do período
+            # Para o LTV, vamos usar a data de referência como end_date
+            # mas filtrar os dados base para o período selecionado
+            ltv_data = self.calculate_ltv_for_period(start_date, end_date)
+            ltv_geral = ltv_data.get('ltv_total', 0)
+            
+            # 5. RECEITA BRUTA - Soma valor_bruto de transações aprovadas
+            receita_bruta = self._calculate_receita_bruta_for_period(start_date, end_date)
+            
+            resultado = {
+                "faturamento_total": faturamento_total,
+                "receita_bruta": receita_bruta,
+                "total_vendas": total_vendas,
+                "total_alunos": total_alunos,
+                "ltv_geral": ltv_geral,
+                "periodo": {
+                    "start_date": start_date.isoformat(),
+                    "end_date": end_date.isoformat(),
+                    "dias": (end_date - start_date).days
+                },
+                "detalhes": {
+                    "faturamento_query": "Soma valor_bruto de transacoes com status approved/paid/authorized",
+                    "vendas_query": "Conta transacoes com status approved/paid/authorized", 
+                    "alunos_query": "Conta assinaturas criadas no período por data_inicio",
+                    "ltv_query": "LTV calculado usando dados do período selecionado"
+                }
+            }
+            
+            self.logger.info(f"✅ Dashboard metrics calculadas:")
+            self.logger.info(f"   💰 Faturamento Total (líquido): R$ {faturamento_total:.2f}")
+            self.logger.info(f"   💵 Receita Bruta: R$ {receita_bruta:.2f}")
+            self.logger.info(f"   📊 Vendas: {total_vendas}")
+            self.logger.info(f"   👥 Alunos: {total_alunos}")
+            self.logger.info(f"   💎 LTV: R$ {ltv_geral:.2f}")
+            
+            return resultado
+            
+        except Exception as e:
+            self.logger.error(f"Erro ao calcular métricas do dashboard: {str(e)}")
+            raise
+
+    def calculate_ltv_for_period(self, start_date: datetime, end_date: datetime) -> Dict[str, Any]:
+        """
+        Calcula LTV usando dados específicos do período selecionado.
+        
+        Adapta o cálculo de LTV para usar apenas dados do período:
+        - Ticket médio baseado em assinaturas criadas no período
+        - Churn rate baseado em cancelamentos do período
+        
+        Args:
+            start_date: Data inicial do período
+            end_date: Data final do período
+            
+        Returns:
+            Dict com LTV calculado para o período
+        """
+        self.logger.info(f"Calculando LTV para período: {start_date} a {end_date}")
+        
+        try:
+            # Calcula churn rate para o período específico
+            periodo_dias = (end_date - start_date).days
+            churn_data = self.calculate_churn_rate_for_period(start_date, end_date)
+            
+            # Query para ticket médio baseado em assinaturas criadas no período
+            query = text("""
+                SELECT 
+                    plataforma,
+                    COUNT(*) as total_assinaturas,
+                    AVG(
+                        CASE 
+                            WHEN valor_anual IS NOT NULL THEN valor_anual
+                            WHEN valor_mensal IS NOT NULL THEN valor_mensal * 12
+                            ELSE 0
+                        END
+                    ) as ticket_medio_anual
+                    
+                FROM assinaturas 
+                WHERE 
+                    data_inicio BETWEEN :start_date AND :end_date
+                    AND status NOT IN ('refunded', 'chargeback')
+                    AND (valor_mensal IS NOT NULL OR valor_anual IS NOT NULL)
+                    
+                GROUP BY plataforma
+                ORDER BY plataforma
+            """)
+            
+            result = self.db.execute(query, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchall()
+            
+            ltv_por_plataforma = {}
+            detalhes = {
+                "data_inicio": start_date.isoformat(),
+                "data_fim": end_date.isoformat(),
+                "periodo_dias": periodo_dias,
+                "metodo_calculo": "ticket_medio_anual / (churn_rate_periodo / 100)",
+                "breakdown_por_plataforma": {}
+            }
+            
+            total_ticket_medio = Decimal('0')
+            total_assinaturas = 0
+            
+            for row in result:
+                plataforma = row.plataforma
+                ticket_medio = float(row.ticket_medio_anual) if row.ticket_medio_anual else 0
+                churn_rate = churn_data["churn_por_plataforma"].get(plataforma, 0)
+                
+                # Calcula LTV
+                if churn_rate > 0:
+                    ltv = ticket_medio / (churn_rate / 100)
+                else:
+                    # Se churn rate é 0, assume uma taxa mínima de 1%
+                    ltv = ticket_medio / 0.01
+                
+                ltv_por_plataforma[plataforma] = ltv
+                detalhes["breakdown_por_plataforma"][plataforma] = {
+                    "ticket_medio_anual": ticket_medio,
+                    "churn_rate_periodo": churn_rate,
+                    "ltv_calculado": ltv,
+                    "total_assinaturas": row.total_assinaturas
+                }
+                
+                # Acumula para cálculo do LTV total
+                total_ticket_medio += Decimal(str(ticket_medio)) * row.total_assinaturas
+                total_assinaturas += row.total_assinaturas
+            
+            # Calcula LTV total ponderado
+            if total_assinaturas > 0:
+                ticket_medio_geral = float(total_ticket_medio / total_assinaturas)
+                churn_total = churn_data["churn_rate_total"]
+                
+                if churn_total > 0:
+                    ltv_total = ticket_medio_geral / (churn_total / 100)
+                else:
+                    # CORREÇÃO: Se não há churn no período, usa o ticket médio como LTV
+                    # (assumindo que o cliente ficará ativo por pelo menos 1 ano)
+                    ltv_total = ticket_medio_geral
+                    
+                self.logger.info(f"LTV calculado: ticket_medio={ticket_medio_geral:.2f}, churn_rate={churn_total:.2f}%, ltv={ltv_total:.2f}")
+            else:
+                ltv_total = 0
+                ticket_medio_geral = 0
+            
+            resultado = {
+                "ltv_total": ltv_total,
+                "ltv_por_plataforma": ltv_por_plataforma,
+                "ticket_medio_anual_geral": ticket_medio_geral,
+                "churn_rate_utilizado": churn_data["churn_rate_total"],
+                "detalhes": detalhes
+            }
+            
+            self.logger.info(f"LTV calculado para período: R$ {ltv_total:.2f}")
+            return resultado
+            
+        except Exception as e:
+            self.logger.error(f"Erro ao calcular LTV para período: {str(e)}")
+            raise
+
+    def calculate_churn_rate_for_period(self, start_date: datetime, end_date: datetime) -> Dict[str, Any]:
+        """
+        Calcula churn rate para um período específico.
+        
+        Args:
+            start_date: Data inicial do período
+            end_date: Data final do período
+            
+        Returns:
+            Dict com churn rate para o período
+        """
+        self.logger.info(f"Calculando churn rate para período: {start_date} a {end_date}")
+        
+        try:
+            # Query para cancelamentos no período
+            query_cancelamentos = text("""
+                SELECT 
+                    plataforma,
+                    COUNT(*) as total_cancelamentos
+                FROM assinaturas 
+                WHERE 
+                    ultima_atualizacao BETWEEN :start_date AND :end_date
+                    AND status = 'cancelled'
+                    AND data_inicio < :start_date  -- Assinatura já existia antes do período
+                GROUP BY plataforma
+            """)
+            
+            result_cancelamentos = self.db.execute(query_cancelamentos, {
+                "start_date": start_date,
+                "end_date": end_date
+            }).fetchall()
+            
+            # Query para assinaturas ativas no início do período
+            query_ativas_inicio = text("""
+                SELECT 
+                    plataforma,
+                    COUNT(*) as total_ativas_inicio
+                FROM assinaturas 
+                WHERE 
+                    data_inicio <= :start_date
+                    AND (data_expiracao_acesso >= :start_date OR data_expiracao_acesso IS NULL)
+                    AND status NOT IN ('cancelled', 'refunded', 'chargeback')
+                GROUP BY plataforma
+            """)
+            
+            result_ativas_inicio = self.db.execute(query_ativas_inicio, {
+                "start_date": start_date
+            }).fetchall()
+            
+            # Calcula churn rate por plataforma
+            churn_por_plataforma = {}
+            total_churn = 0
+            total_ativas_inicio = 0
+            
+            for row in result_ativas_inicio:
+                plataforma = row.plataforma
+                ativas_inicio = row.total_ativas_inicio
+                cancelamentos = 0
+                
+                # Busca cancelamentos para esta plataforma
+                for cancel_row in result_cancelamentos:
+                    if cancel_row.plataforma == plataforma:
+                        cancelamentos = cancel_row.total_cancelamentos
+                        break
+                
+                # Calcula churn rate
+                if ativas_inicio > 0:
+                    churn_rate = (cancelamentos / ativas_inicio) * 100
+                else:
+                    churn_rate = 0
+                
+                churn_por_plataforma[plataforma] = churn_rate
+                total_churn += cancelamentos
+                total_ativas_inicio += ativas_inicio
+            
+            # Calcula churn rate total
+            if total_ativas_inicio > 0:
+                churn_rate_total = (total_churn / total_ativas_inicio) * 100
+            else:
+                churn_rate_total = 0
+            
+            resultado = {
+                "churn_rate_total": churn_rate_total,
+                "churn_por_plataforma": churn_por_plataforma,
+                "total_cancelamentos": total_churn,
+                "total_ativas_inicio": total_ativas_inicio,
+                "periodo": {
+                    "start_date": start_date.isoformat(),
+                    "end_date": end_date.isoformat()
+                }
+            }
+            
+            self.logger.info(f"Churn rate calculado para período: {churn_rate_total:.2f}%")
+            return resultado
+            
+        except Exception as e:
+            self.logger.error(f"Erro ao calcular churn rate para período: {str(e)}")
+            raise
+
+    def diagnose_database_dates(self):
+        """
+        Função de diagnóstico para verificar quais datas existem no banco.
+        """
+        self.logger.info("🔍 DIAGNÓSTICO DO BANCO DE DADOS:")
+        
+        try:
+            # Verifica transações
+            query_transacoes = text("""
+                SELECT 
+                    COUNT(*) as total_transacoes,
+                    MIN(data_transacao) as min_data_transacao,
+                    MAX(data_transacao) as max_data_transacao,
+                    COUNT(CASE WHEN status IN ('approved', 'paid', 'authorized') THEN 1 END) as transacoes_aprovadas
+                FROM transacoes
+            """)
+            
+            result_transacoes = self.db.execute(query_transacoes).fetchone()
+            
+            self.logger.info(f"🔍 TABELA TRANSACOES:")
+            self.logger.info(f"   Total: {result_transacoes.total_transacoes}")
+            self.logger.info(f"   Data mínima: {result_transacoes.min_data_transacao}")
+            self.logger.info(f"   Data máxima: {result_transacoes.max_data_transacao}")
+            self.logger.info(f"   Aprovadas: {result_transacoes.transacoes_aprovadas}")
+            
+            # Verifica assinaturas
+            query_assinaturas = text("""
+                SELECT 
+                    COUNT(*) as total_assinaturas,
+                    MIN(data_inicio) as min_data_inicio,
+                    MAX(data_inicio) as max_data_inicio,
+                    COUNT(CASE WHEN status NOT IN ('refunded', 'chargeback') THEN 1 END) as assinaturas_validas
+                FROM assinaturas
+            """)
+            
+            result_assinaturas = self.db.execute(query_assinaturas).fetchone()
+            
+            self.logger.info(f"🔍 TABELA ASSINATURAS:")
+            self.logger.info(f"   Total: {result_assinaturas.total_assinaturas}")
+            self.logger.info(f"   Data mínima: {result_assinaturas.min_data_inicio}")
+            self.logger.info(f"   Data máxima: {result_assinaturas.max_data_inicio}")
+            self.logger.info(f"   Válidas: {result_assinaturas.assinaturas_validas}")
+            
+            # Verifica se há dados em 2025
+            query_2025 = text("""
+                SELECT 
+                    'transacoes' as tabela,
+                    COUNT(*) as total,
+                    MIN(data_transacao) as min_data,
+                    MAX(data_transacao) as max_data
+                FROM transacoes 
+                WHERE EXTRACT(YEAR FROM data_transacao) = 2025
+                UNION ALL
+                SELECT 
+                    'assinaturas' as tabela,
+                    COUNT(*) as total,
+                    MIN(data_inicio) as min_data,
+                    MAX(data_inicio) as max_data
+                FROM assinaturas 
+                WHERE EXTRACT(YEAR FROM data_inicio) = 2025
+            """)
+            
+            result_2025 = self.db.execute(query_2025).fetchall()
+            
+            self.logger.info(f"🔍 DADOS EM 2025:")
+            for row in result_2025:
+                self.logger.info(f"   {row.tabela}: {row.total} registros ({row.min_data} a {row.max_data})")
+            
+            return {
+                "transacoes": {
+                    "total": result_transacoes.total_transacoes,
+                    "min_data": result_transacoes.min_data_transacao,
+                    "max_data": result_transacoes.max_data_transacao,
+                    "aprovadas": result_transacoes.transacoes_aprovadas
+                },
+                "assinaturas": {
+                    "total": result_assinaturas.total_assinaturas,
+                    "min_data": result_assinaturas.min_data_inicio,
+                    "max_data": result_assinaturas.max_data_inicio,
+                    "validas": result_assinaturas.assinaturas_validas
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Erro no diagnóstico: {str(e)}")
+            raise
+
+    def _calculate_faturamento_for_period(self, start_date: datetime, end_date: datetime) -> float:
+        """Calcula faturamento para um período específico usando valor_liquido."""
+        query = text("""
+            SELECT COALESCE(SUM(valor_liquido), 0) as faturamento_total
+            FROM transacoes 
+            WHERE data_transacao BETWEEN :start_date AND :end_date
+            AND status IN ('approved', 'paid', 'authorized')
+            AND valor_liquido > 0
+        """)
+        
+        result = self.db.execute(query, {
+            "start_date": start_date,
+            "end_date": end_date
+        }).fetchone()
+        
+        return float(result.faturamento_total) if result.faturamento_total else 0
+
+    def _calculate_receita_bruta_for_period(self, start_date: datetime, end_date: datetime) -> float:
+        """Calcula receita bruta para um período específico usando valor_bruto."""
+        query = text("""
+            SELECT COALESCE(SUM(valor_bruto), 0) as receita_bruta
+            FROM transacoes 
+            WHERE data_transacao BETWEEN :start_date AND :end_date
+            AND status IN ('approved', 'paid', 'authorized')
+            AND valor_bruto > 0
+        """)
+        
+        result = self.db.execute(query, {
+            "start_date": start_date,
+            "end_date": end_date
+        }).fetchone()
+        
+        return float(result.receita_bruta) if result.receita_bruta else 0
+
+    def _calculate_vendas_for_period(self, start_date: datetime, end_date: datetime) -> int:
+        """Calcula total de vendas para um período específico."""
+        query = text("""
+            SELECT COUNT(*) as total_vendas
+            FROM transacoes 
+            WHERE data_transacao BETWEEN :start_date AND :end_date
+            AND status IN ('approved', 'paid', 'authorized')
+            AND valor_bruto > 0
+        """)
+        
+        result = self.db.execute(query, {
+            "start_date": start_date,
+            "end_date": end_date
+        }).fetchone()
+        
+        return int(result.total_vendas) if result.total_vendas else 0
+
+    def _calculate_alunos_for_period(self, start_date: datetime, end_date: datetime) -> int:
+        """Calcula total de alunos para um período específico.
+        
+        CORREÇÃO: Conta apenas assinaturas que têm transações aprovadas,
+        excluindo assinaturas criadas apenas por geração de PIX sem compra aprovada.
+        """
+        query = text("""
+            SELECT COUNT(DISTINCT a.id) as total_alunos
+            FROM assinaturas a
+            INNER JOIN transacoes t ON a.id = t.assinatura_id
+            WHERE a.data_inicio BETWEEN :start_date AND :end_date
+            AND a.status NOT IN ('refunded', 'chargeback')
+            AND t.status IN ('approved', 'paid', 'authorized')
+            AND t.valor_bruto > 0
+        """)
+        
+        result = self.db.execute(query, {
+            "start_date": start_date,
+            "end_date": end_date
+        }).fetchone()
+        
+        return int(result.total_alunos) if result.total_alunos else 0

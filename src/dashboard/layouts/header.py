@@ -32,28 +32,45 @@ def create_header():
                 )
             ], className="text-white"),
             
-            # Seletor de datas (lado direito)
-            dbc.Button([
-                # Ícone de calendário
-                html.I(
-                    className="fas fa-calendar me-2",
-                    style={"fontSize": "1rem"}
-                ),
+            # Controles (lado direito)
+            html.Div([
+                # Botão de refresh
+                dbc.Button([
+                    html.I(className="fas fa-sync-alt me-2"),
+                    "Atualizar"
+                ], 
+                id="refresh-button",
+                color="light", 
+                className="text-primary border-0 shadow-sm me-2",
+                style={
+                    "borderRadius": "0.5rem",
+                    "fontWeight": "500",
+                    "padding": "0.5rem 1rem"
+                }),
                 
-                # Texto do botão
-                html.Span(
-                    "Selecionar intervalo de datas",
-                    style={"fontSize": "0.875rem"}
-                )
-            ], 
-            id="date-picker-button",
-            color="light", 
-            className="text-primary border-0 shadow-sm",
-            style={
-                "borderRadius": "0.5rem",
-                "fontWeight": "500",
-                "padding": "0.5rem 1rem"
-            })
+                # Seletor de datas
+                dbc.Button([
+                    # Ícone de calendário
+                    html.I(
+                        className="fas fa-calendar me-2",
+                        style={"fontSize": "1rem"}
+                    ),
+                    
+                    # Texto do botão
+                    html.Span(
+                        "Selecionar intervalo de datas",
+                        style={"fontSize": "0.875rem"}
+                    )
+                ], 
+                id="date-picker-button",
+                color="light", 
+                className="text-primary border-0 shadow-sm",
+                style={
+                    "borderRadius": "0.5rem",
+                    "fontWeight": "500",
+                    "padding": "0.5rem 1rem"
+                })
+            ], className="d-flex align-items-center")
         ]),
         
         # Estilo do navbar
