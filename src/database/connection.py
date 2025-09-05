@@ -1,7 +1,11 @@
 # Database connection 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 import os
+
+# Base para modelos SQLAlchemy
+Base = declarative_base()
 
 # Busca a URL do banco de dados das variáveis de ambiente ou usa o padrão do docker-compose
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://metrics_user:asdfghjkl@db:5432/metrics_db")
@@ -23,4 +27,14 @@ def get_db_session():
     """
     Retorna uma nova sessão do banco de dados (alias para get_session).
     """
-    return SessionLocal() 
+    return SessionLocal()
+
+def get_db():
+    """
+    Dependency para FastAPI que retorna uma sessão do banco de dados.
+    """
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close() 

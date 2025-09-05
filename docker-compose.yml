@@ -32,7 +32,8 @@ services:
       - PIP_NO_CACHE_DIR=1
     command: >
       sh -c "pip install -r /app/requirements.txt &&
-             alembic -c alembic.ini upgrade head"
+             alembic -c alembic.ini upgrade head &&
+             python scripts/setup_authentication.py"
   api:
     build: .
     container_name: dashboardcomu_api

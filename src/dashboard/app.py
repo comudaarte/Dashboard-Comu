@@ -10,6 +10,8 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 from .layouts.main_layout import create_main_layout_responsive
 from .callbacks import register_all_callbacks
+from .auth_components import create_login_page, register_auth_callbacks
+from .final_auth_layout import create_final_auth_layout, register_final_auth_callbacks
 
 
 def create_dashboard_app():
@@ -43,8 +45,11 @@ def create_dashboard_app():
         ]
     )
     
-    # Configura o layout principal
-    app.layout = create_main_layout_responsive()
+    # Configura o layout principal final
+    app.layout = create_final_auth_layout()
+    
+    # Registra callbacks de autenticação final
+    register_final_auth_callbacks(app)
     
     # Registra todos os callbacks
     register_all_callbacks(app)

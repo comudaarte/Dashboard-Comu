@@ -14,7 +14,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 
 # Importa a API de webhooks
-from .Api.webhooks import app as webhook_app
+from Api.webhooks import app as webhook_app
+from Api.auth_routes import auth_router
 
 # Setup de logging
 logging.basicConfig(level=logging.INFO)
@@ -43,6 +44,9 @@ def create_main_app():
     # Monta a API de webhooks
     main_app.mount("/api", webhook_app)
     
+    # Inclui rotas de autenticação
+    main_app.include_router(auth_router)
+    
     # Endpoint de saúde principal
     @main_app.get("/")
     def root():
@@ -65,7 +69,7 @@ def start_dashboard():
     try:
         logger.info("🚀 Iniciando Dashboard Dash...")
         
-        from .dashboard.app import create_dashboard_app
+        from dashboard.app import create_dashboard_app
         
         dashboard_app = create_dashboard_app()
         
