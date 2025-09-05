@@ -1,0 +1,4 @@
+[33ma38c741[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Implementacao sistema de autenticação de login e senha\n Adiciona: Layout de autenticação final\n - Melhora: sistema de login\n - Atualiza: callbacks de autenticação\n - Corrige: bugs de interface
+[33m3877beb[m[33m ([m[1;31morigin/master[m[33m)[m Implementa funcionalidades avançadas do dashboard e sistema de exportação
+[33m3340604[m Refatora documentação: reorganiza docs/ com novos guias e remove arquivos obsoletos
+[33m4c7327a[m Initial commit: Dashboard Comu - Sistema completo de métricas para Guru e Ticto
